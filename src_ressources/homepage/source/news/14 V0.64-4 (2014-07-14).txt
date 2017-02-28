@@ -1,0 +1,14 @@
+===Bug fix, Bug Tracker
+
+Date: 14.07.2014
+
+Release (version 0.64-4) of jGameBase has been released.
+
+<br><b>Bugs Fixed</b>
+&nbsp;&nbsp;- <i>compiled with target 1.6 so that JRE 1.6 can run the class files again</i>
+
+<br><b>Bug Tracker</b>
+&nbsp;&nbsp;- <i>the bug tracker on the sourceforge project site has been reenabled</i>
+
+<p></p><br clear="all" />
+

@@ -1,0 +1,426 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html lang="en" style="height: 100%;">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+<meta name="keywords" content=
+"jgamebase,gamebase,gamebase64,gb64,emulator,frontend,front-end,game,commodore,c64,amiga,atari,st,spectrum,zx,utility,utilities,tool,tools,program,open,source,open source,Gnu,General,Public,Licence,Gnu General Public Licence,GPL,free,no cost,java,JAVA,Linux,Unix,Macintosh,OS-X,OS/2,OS independent,OS-independent">
+<meta name="description" content="Homepage of jGameBase a fully-featured retro-gaming emulator frontend and game database utility (e.g. for the GB64 collection of C64 games) released under the GPL">
+<meta name="author" content="F. Gerbig">
+<meta name="robots" content="all">
+<meta name="revisit-after" content="20 days">
+
+<meta name="DC.Title" content="jGameBase">
+<meta name="DC.Creator" content="F. Gerbig">
+<meta name="DC.Subject" content="computer software emulator frontend">
+<meta name="DC.Description" content="Homepage of jGameBase a fully-featured retro-gaming emulator frontend and game database utility (e.g. for the GB64 collection of C64 games) released under the GPL">
+<meta name="DC.Publisher" content="F. Gerbig">
+<meta name="DC.Type" content="Software">
+<meta name="DC.Format" content="text/html">
+<meta name="DC.Identifier" content="http://jgamebase.sourceforge.net/">
+<meta name="DC.Language" content="en">
+<meta name="DC.Rights" content="GPL">
+
+<title>jGameBase -  Manual</title>
+
+<link rel="shortcut icon" href="favicon.ico"/>
+
+<link rel="stylesheet" href="styles/menu.css" type="text/css" media="screen"/>
+<link rel="stylesheet" href="styles/content.css" type="text/css" media="screen"/>
+<link rel="stylesheet" href="styles/2spaltig.css" type="text/css" media="screen"/>
+<!-- INDEX -->
+</head>
+<body>
+<div id="header">
+<img src="images/header770.gif" width="770" height="90" border="0" alt="">
+<ul id="popMenu">
+<li><a href="index.html">About</a>
+<li><a href="news.html">News</a>
+<li><a href="download.html">Download</a>
+<li><a href="manual.html">Manual</a>
+</li>
+<li><a href="scripts.html">Emulators</a>
+<li><a href="contact.html">Contact</a>
+</ul>
+<!-- popMenu ende -->
+<div id="kopf"><font color="#000000" style="vertical-align: sub;"><i>j</font>GameBase</i></div><!-- kopf ende -->
+</div>
+<!-- header ende -->
+<div id="content">
+<br clear="all">
+<div id="submenu">
+
+        <p> 1. <a href="#1">Starting</a><br/>
+          &nbsp;&nbsp;1.1 <a href="#11">On Linux/UNIX/Mac</a><br/>
+          &nbsp;&nbsp;1.2 <a href="#12">On MS Windows</a><br/>
+          &nbsp;&nbsp;1.3 <a href="#13">On other OS</a><br/>
+          <br/>
+          2. <a href="#2">First Steps</a><br/>
+          &nbsp;&nbsp;2.1 <a href="#21">Sample Database</a><br/>
+          &nbsp;&nbsp;2.2 <a href="#22">Install Database</a><br/>
+          <br/>
+          3. <a href="#3">Using <i>jGameBase</i></a><br/>
+          &nbsp; 3.1 <a href="#31">Games and Music</a><br/>
+          &nbsp; 3.2 <a href="#32">Panel</a><br/>
+          &nbsp; 3.3 <a href="#33">Playing Games</a><br/>
+          &nbsp; 3.4 <a href="#34">Playing Music</a><br/>
+          &nbsp; 3.5 <a href="#35">Running Extras</a><br/>
+        </p>
+
+</div>
+<div id="mitte">
+
+      <p class="head"><i>jGameBase</i> Manual</p>
+      <h2><a name="1">1. Starting jGameBase</a></h2>
+      <h3><a name="11">1.1 On Linux™/UNIX™ or Apple Macintosh™</a></h3>
+      <p>On Linux™/UNIX™ or Apple Macintosh™ simply start the "<b>jgamebase.sh</b>".</p>
+      <h3><a name="12">1.2 On Microsoft Windows™</a></h3>
+      <p>On MS Windows™ simply start the "<b>jgamebase.bat</b>".</p>
+      There is a native frontend <a href="http://bu22.com/">GameBase</a>
+      (without "<b>j</b>") for MS Windows™ - perhaps you want to try it.
+      <h3><a name="13">1.3 On other operating systems</a></h3>
+      <p>On other operating systems you have to start jGameBase by calling Java
+        directly via <br/>
+        "<b>java -jar jgamebase.jar</b>".</p>
+      <p></p>
+      <br/>
+      <h2><a name="2">2. First Steps</a></h2>
+      <h3><a name="21">2.1 Sample Database</a></h3>
+      jGameBase includes a small demo database of C64 classics "C64lite"
+      containing screenshots (from <a href="http://gb64.com" target="_new">GameBase64</a>)
+      and music files (from <a href="http://hvsc.c64.org" target="_new">High
+        Voltage SID Collection</a>).<br/>
+      For copyright reasons there are <b>no games</b> or extra files (game
+      reviews, etc.) <b>included</b>.
+      <h3><a name="22">2.2 Installing a Database</a></h3>
+      <ol>
+        <li>Download a game database e.g. <a href="http://gb64.com" target="_new">GameBase64</a>
+          or <a href="http://gbamiga.elowar.com" target="_new">GameBase Amiga</a>
+          (there is a list of jGameBase projects on the <a href="http://www.gb64.com/forum"
+            target="_new">GameBase64 Forum</a>).<br/>
+          <br/>
+        </li>
+        <li>Extract the files to a subdirectory in the database directory. On
+          Linux this is "~/.jgamebase", on MS Windows it is the <i>jGameBase</i>
+          directory. During application start <i>jGameBase</i> prints the
+          location of the database directory to the console and to the log file.<br/>
+          <br/>
+          Unfortunately some databases are only available as MS Windows
+          installer; you can try to extract them using <a href="http://www.winehq.org"
+            target="_new">WINE</a>.<br/>
+          <br/>
+        </li>
+        <li>Download additional files (screenshots, music, etc.). If possible
+          put them in the default directories "Games", "Screenshots", "Extras",
+          "Music", and "Photos".<br/>
+          <br/>
+        </li>
+        <li>Start <i>jGameBase</i> (not imported Access databases will be
+          automatically discovered).<br/>
+          <br/>
+        </li>
+        <li>If necessary configure the paths to the downloaded files (Menu
+          "Tools → Paths...").<br/>
+          Files in the directories "Games", "Screenshots", "Extras", "Music",
+          and "Photos" will be found without specifying a path.<br/>
+          <br/>
+          <div style="text-align: center;"><img alt="" src="images/EditPaths.png"><br/>
+            <br/>
+            <div style="text-align: left;">
+              <table style="text-align: left; margin-left: auto; margin-right: auto;"
+                border="0">
+                <tbody>
+                  <tr>
+                    <td style="text-align: center;"><span style="font-weight: bold;">Double
+                        click</span><br/>
+                    </td>
+                    <td>Edit<br/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center;"><img alt="" src="images/ico1_new.png"><br/>
+                    </td>
+                    <td>New<br/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center;"><img alt="" src="images/ico2_del.png"><br/>
+                    </td>
+                    <td>Remove<br/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center;"><img alt="" src="images/ico3_up.png"><br/>
+                    </td>
+                    <td>Up in search order<br/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center;"><img alt="" src="images/ico4_down.png"><br/>
+                    </td>
+                    <td>Down in search order<br/>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <br/>
+            </div>
+          </div>
+          <br/>
+        </li>
+        <li>Now it is necessary to update the status of the files by verifying
+          that the files can be found. This search is done case independent and files with wrong case will be corrected automatically. (Menu "Tools → Verify Available
+          Files...").<br/>
+          <br/>
+          Select the type of files you want to check and click "Start"
+          <div style="text-align: center;"><img style="width: 540px; height: 184px;"
+              alt="" src="images/VerifyAvailableFiles.png"><br/>
+          </div>
+          To know what files you are missing check the file
+          "VerifyAvailableFiles.log" and the missing files lists (*.mfl) that
+          were created in the database directory. <br/>
+          <br/>
+        </li>
+        <li>Configure the emulators (Menu "Emulators").<br/>
+          <br/>
+          <div style="text-align: center;"><img alt="" src="images/ManageGameEmulators.png"><br/>
+          </div>
+          <br/>
+          <table style="text-align: left; margin-left: auto; margin-right: auto;"
+            border="0">
+            <tbody>
+              <tr>
+                <td style="text-align: center;"><span style="font-weight: bold;">Double
+                    click</span><br/>
+                </td>
+                <td>Edit<br/>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center;"><img alt="" src="images/ico1_new.png"><br/>
+                </td>
+                <td>New<br/>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center;"><img alt="" src="images/ico2_del.png"><br/>
+                </td>
+                <td>Remove<br/>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center;"><img alt="" src="images/ico3_up.png"><br/>
+                </td>
+                <td>Up in search order<br/>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center;"><img alt="" src="images/ico4_down.png"><br/>
+                </td>
+                <td>Down in search order<br/>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <br/>
+          <div style="text-align: center;"><img alt="" src="images/EditGameEmulator.png"><br/>
+            <br/>
+            <table style="text-align: left; margin-left: auto; margin-right: auto;"
+              border="0" cellspacing="8">
+              <tbody align="left">
+                <tr>
+                  <td style="text-align: left; vertical-align: top; font-weight: bold;">Emulator
+                    name<br/>
+                  </td>
+                  <td>The name displayed for this emulator<br/>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align: left; vertical-align: top; font-weight: bold;">Supported
+                    extensions<br/>
+                  </td>
+                  <td>A list of file extensions this
+                    emulator can handle, separated by semicolons. The use of "*"
+                    as wildcard is <span style="text-decoration: underline;">discouraged</span>,
+                    because this emulator would be called for <span style="font-weight: bold;">all</span>
+                    files.<br/>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align: left; vertical-align: top; font-weight: bold;">Command
+                    to execute<br/>
+                  </td>
+                  <td>The command to start the emulator. If no path is given the
+                    file is expected to be in the current databases script
+                    directory "Scripts".<br/>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align: left; vertical-align: top; font-weight: bold;">Configuration
+                    file<br/>
+                  </td>
+                  <td>The configuration file for this emulator. The emulator
+                    command (s. above) can modify this file prior to starting
+                    the emulator.<br/>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <br/>
+          </div>
+        </li>
+      </ol>
+      <h2><a name="3">3. Using <span style="font-style: italic;">jGameBase</span></a></h2>
+      <p> <img src="images/jGameBase.png" alt="The jGameBase GUI" border="0"> </p><br/>
+      <h3><a name="31">3.1 Identifying Games and Music</a><br/>
+      </h3>
+      Although it's name suggests that only games are supported, <span style="font-style: italic;">jGameBase</span>
+      also supports music. Due to the fact that many computer emulated music
+      belongs to games but many does not (e.g. demo or intro music), <span style="font-style: italic;">jGameBase</span>
+      manages items in two main tables. Firstly there is a <span style="font-style: italic;">Games</span>
+      table, where all games and their respective info is stored (including the
+      information which game and music files belong to this game). Secondly
+      there is a <span style="font-style: italic;">Music</span> table, where
+      all pieces of music that do not belong to a game are stored.
+      <p></p>
+      <p>In <span style="font-style: italic;">jGameBase</span> you can view
+        items from the Games and Music tables separately or together in the same
+        list. Items in the list are identified by their icon:</p>
+      <table border="0" cellpadding="0" cellspacing="8" width="100%">
+        <tbody>
+          <tr valign="top">
+            <td style="text-align: center; font-weight: bold;" width="16"><img src="images/lv_gameandsid.gif"
+                height="16" width="16"></td>
+            <td>The item is a Game, and it has a game and a music file attached.</td>
+          </tr>
+          <tr valign="top">
+            <td style="text-align: center; font-weight: bold;" width="16"><img src="images/lv_justgame.gif"
+                height="16" width="16"></td>
+            <td>The item is a Game, and it has only a game file attached.</td>
+          </tr>
+          <tr valign="top">
+            <td style="text-align: center; font-weight: bold;" width="16"><img src="images/lv_justsid.gif"
+                height="16" width="16"></td>
+            <td>The item is a Game, and it has only a music file attached.</td>
+          </tr>
+          <tr valign="top">
+            <td style="text-align: center; font-weight: bold;" width="16"><img src="images/lv_sidonly.gif"
+                height="16" width="16"></td>
+            <td>The item is a piece of Music.</td>
+          </tr>
+          <tr valign="top">
+            <td style="text-align: center; font-weight: bold;" width="16">no&nbsp;icon</td>
+            <td>The item is a Game, neither a game file nor a music file is attached.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>When you click on a Game item, the game's info will appear under the
+        list of items in a tabbed display and any pictures will appear to the
+        right of the list.</p>
+      <p>When you click on a Music item, the music's info will appear under the
+        list of items and the music author's photo (if one exists) will appear
+        to the right of the list.</p>
+      <p> </p><br/>
+      <h3><a name="32">3.2 The Panel</a></h3>
+      <img src="images/jGameBase_Panel.png" alt="The jGameBase GUI Panel"><br/>
+      <table style="text-align: left; margin-left: auto; margin-right: auto;" border="0"
+        cellspacing="8">
+        <tbody align="left">
+          <tr>
+            <td style="text-align: left; vertical-align: top; font-weight: bold;">"..."&nbsp;button<br/>
+            </td>
+            <td style="vertical-align: top;">View and Quickfilter Menu.<br/>Here you can modify views and set filters.
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: left; vertical-align: top; font-weight: bold;">"View"&nbsp;list<br/>
+            </td>
+            <td style="vertical-align: top;">Selection list of available Views.
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: left; vertical-align: top; font-weight: bold;">"?"
+              button<br/>
+            </td>
+            <td style="vertical-align: top;">Select a random item.
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top; font-weight: bold;">"Play&nbsp;Game"&nbsp;button<br/>
+            </td>
+            <td style="vertical-align: top;">Play the selected game.
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top; font-weight: bold;">"Play"&nbsp;button<br/>
+            </td>
+            <td style="vertical-align: top;">Play the selected piece of music.
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top; font-weight: bold;">"Stop"&nbsp;button</td>
+            </td>
+            <td style="vertical-align: top;">Stop the currently playing music.
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top; font-weight: bold;">"Extras"&nbsp;button<br/>
+            </td>
+            <td style="vertical-align: top;">Open extras for the selected game.
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: left; vertical-align: top; font-weight: bold;">Folder&nbsp;button<br/>
+            </td>
+            <td style="vertical-align: top;">Open the folder for additional extras for the selected game.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br/>
+      <text>
+      <h3><a name="33">3.3 Playing Games</a></h3>
+        To play a game with the default emulator, left-click the "Play Game"
+        button in the main <span style="font-style: italic;">jGameBase</span>
+        window. Right-clicking this button displays a list of available game
+        emulators for you to choose from.<br/>
+        <p></p>
+      <h3><a name="34">3.4 Playing Music</a></h3>
+        To play a piece of music with the default music player, left-click the "‣" button
+        in the main <span style="font-style: italic;">jGameBase</span> window.
+        Right-clicking this button displays a list of available music players
+        for you to choose from.
+        <p></p>
+      <h3><a name="35">3.5 Running Extras</a></h3>
+        If there are Extras set up for the currently selected game, you can
+        run them by clicking the "Extras" button in the main <span style="font-style: italic;">jGameBase</span>
+        window and selecting the desired Extra from the list.
+        <p></p>
+      
+</div>
+<!-- links ende -->
+<!-- rechts ende -->
+<div id="spacer">&nbsp;</div>
+
+<div id="abbinder">
+<table style="text-align: left; width: 100%;" border="0">
+  <tbody>
+    <tr>
+      <td><a href="index.html"><small>Home</small></a><small>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="mailto:fgerbig%40users.sourceforge%2enet?subject=jGameBase-Homepage">Mail&nbsp;Webmaster</a></small></td>
+      <td colspan="1" rowspan="2" style="text-align: center;"><img src="images/LinuxGameTome_4stars.png" alt="rated four out of five stars (silver rating) on 'The Linux Game Tome'" border="0" height="40" width="85"></td>
+      <td colspan="1" rowspan="2" style="text-align: right;"><a href="http://sourceforge.net/projects/jgamebase"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=177156&amp;type=12" alt="Get jGameBase - Universal Emulator Frontend at SourceForge.net. Fast, secure and Free Open Source software downloads" border="0" height="30" width="120"></a></td>
+    </tr>
+    <tr>
+      <td><small>Page last updated: 
+
+03. January 2017.
+</small></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<!-- abbinder ende -->
+</div>
+<!-- content ende -->
+</body>
+</html>

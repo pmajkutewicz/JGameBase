@@ -1,0 +1,9 @@
+===Second Public Beta Released
+
+Date: 19.05.2007
+
+The second public beta (version 0.27) of jGameBase has been released.
+This release is approaching the functionality of GameBase, but has way more bugs ;-).
+<p></p><br clear="all" />
+
+

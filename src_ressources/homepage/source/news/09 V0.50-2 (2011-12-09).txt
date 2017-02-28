@@ -1,0 +1,16 @@
+===Documentation, Bug fixes
+
+Date: 09.12.2011
+
+Release (version 0.50-2) of jGameBase has been released.
+
+<br><b>New Functionality</b>
+&nbsp;&nbsp;- <i>New documentation and homepage</i>
+
+<br><b>Bugs Fixed</b>
+&nbsp;&nbsp;- <i>Accept "apple" as java vendor</i>
+&nbsp;&nbsp;- <i>Fixed a problem where the categories window got stuck</i>
+&nbsp;&nbsp;- <i>Fixed various display related bugs</i>
+
+<p></p><br clear="all" />
+

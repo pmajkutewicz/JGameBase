@@ -1,0 +1,19 @@
+===CLI improvement, Bug fixes
+
+Date: 15.12.2012
+
+Release (version 0.64-1) of jGameBase has been released.
+
+<br><b>New Functionality</b>
+&nbsp;&nbsp;- <i>adding a database name and an item id to the command line will launch the specified item
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.g. "</i>jgamebase&nbsp;&nbsp;c64lite&nbsp;&nbsp;G726<i>" will start "</i>Benji - Space Rescue<i>" and<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"</i>jgamebase&nbsp;&nbsp;c64lite&nbsp;&nbsp;M20544<i>" will play "</i>Another One Bites the Dust<i>"</i>
+&nbsp;&nbsp;&nbsp;&nbsp;Thanks to Jim Torelli!
+</i>
+
+<br><b>Bugs Fixed</b>
+&nbsp;&nbsp;- <i>games spanning multiple disks are extracted correctly</i>
+&nbsp;&nbsp;- <i>fixed a problem with scaled down animations</i>
+
+
+<p></p><br clear="all" />
+

@@ -1,0 +1,20 @@
+===Pop up menu, mass import, Bug fixes
+
+Date: 16.12.2011
+
+Release (version 0.50-3) of jGameBase has been released.
+
+<br><b>New Functionality</b>
+&nbsp;&nbsp;- <i>Handling of URLs</i>
+&nbsp;&nbsp;- <i>Simple GEMUS to JavaScript converter in the Toolbox</i>
+&nbsp;&nbsp;- <i>Popup menu</i>
+&nbsp;&nbsp;- <i>Simple mass import</i>
+&nbsp;&nbsp;- <i>Automatic creation of screenshots</i>
+&nbsp;&nbsp;- <i>"Manage" entry in "Play Game" and "Play Music" buttons</i>
+
+<br><b>Bugs Fixed</b>
+&nbsp;&nbsp;- <i>Hang loading screenshots</i>
+&nbsp;&nbsp;- <i>Problems while choosing a music file</i>
+
+<p></p><br clear="all" />
+

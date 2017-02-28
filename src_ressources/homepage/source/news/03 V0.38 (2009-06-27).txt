@@ -1,0 +1,9 @@
+===Third Public Beta Released
+
+Date: 27.06.2009
+
+The third public beta (version 0.38) of jGameBase has been released.
+After a longer time this release has nearly the functionality of GameBase. There are still more bugs, but we are getting close.
+<p></p><br clear="all" />
+
+

@@ -1,0 +1,20 @@
+===Debian-Packages, JDK7, Bug fixes
+
+Date: 27.11.2011
+
+A new release (version 0.50-1) of jGameBase has been released.
+
+<br><b>New Functionality</b>
+&nbsp;&nbsp;- <i>Release a debian package</i>
+&nbsp;&nbsp;- <i>Write messages to a log file</i>
+&nbsp;&nbsp;- <i>Made jGameBase jdk7 compatible</i>
+&nbsp;&nbsp;- <i>Splash screen and main window show version</i>
+&nbsp;&nbsp;- <i>Preliminary support for MS Windows</i>
+
+<br><b>Bugs Fixed</b>
+&nbsp;&nbsp;- <i>Fixed a problem loading bmp images</i>
+&nbsp;&nbsp;- <i>Database icon and splash can be image type other than gif</i>
+&nbsp;&nbsp;- <i>Database icon and splash will be searched for if not found</i>
+
+<p></p><br clear="all" />
+

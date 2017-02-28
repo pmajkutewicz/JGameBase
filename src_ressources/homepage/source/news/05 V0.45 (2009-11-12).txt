@@ -1,0 +1,30 @@
+===Second Release Candidate Released
+
+Date: 12.11.2009
+
+The second release candidate (version 0.45) of jGameBase has been released.
+
+<br><b>Bugs Fixed</b>
+&nbsp;&nbsp;- <i>Added second import (fallback) method, so that Access databases with inconsistencies can be imported (e.g. GameBase Amiga 1.6)</i>
+
+&nbsp;&nbsp;- <i>Plugins didn't get loaded when started from jar</i>
+
+&nbsp;&nbsp;- <i>Fixed NullPointerException with ViewFilters</i>
+
+&nbsp;&nbsp;- <i>Fixed NullPointerException while selecting game file</i>
+
+&nbsp;&nbsp;- <i>Additional Extras got created in wrong path</i>
+
+
+<br><b>New Features</b>
+&nbsp;&nbsp;- <i>Re-wrote the database toolbox: now you can import Access databases step by step</i>
+
+&nbsp;&nbsp;- <i>Separated jGameBase and demo databases</i>
+
+&nbsp;&nbsp;- <i>When no database was found a web browser with the download location of jGameBase databases will be opened</i>
+
+&nbsp;&nbsp;- <i>jGameBase version management has been simplified</i>
+
+<p></p><br clear="all" />
+
+

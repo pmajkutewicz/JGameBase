@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="jgamebase.db.model.ParentGenre" table="PGENRES" schema="APP">
+        <id name="id" type="integer">
+            <column name="PG_ID" index="PGENRES_PG_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="name" type="string">
+            <column name="PARENTGENRE" length="255" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,216 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="jgamebase.db.model.Game" schema="APP" table="GAMES">
+        <id name="id" type="integer">
+            <column name="GA_ID" index="GAMES_GA_ID"/>
+            <generator class="increment" />
+        </id>
+        <property name="name" type="string">
+            <column name="NAME" index="GAMES_NAME"/>
+        </property>
+
+        <many-to-one name="year" class="jgamebase.db.model.Year" foreign-key="GAMES_YEARS" lazy="proxy">
+            <column name="YE_ID" index="GAMES_YE_ID"/>
+        </many-to-one>
+
+        <property name="filename" type="string">
+            <column name="FILENAME" length="32672"/>
+        </property>
+        <property name="fileToRun" type="string">
+            <column name="FILETORUN" length="32672"/>
+        </property>
+        <property name="filenameIndex" type="integer">
+            <column name="FILENAMEINDEX" />
+        </property>
+        <property name="screenshotFilename" type="string">
+            <column name="SCRNSHOTFILENAME" length="32672"/>
+        </property>
+
+        <many-to-one name="musician" class="jgamebase.db.model.Musician" foreign-key="GAMES_MUSICIANS" lazy="proxy">
+            <column name="MU_ID" index="GAMES_MU_ID"/>
+        </many-to-one>
+        
+        <many-to-one name="genre" class="jgamebase.db.model.Genre" foreign-key="GAMES_GENRES" lazy="proxy">
+            <column name="GE_ID" index="GAMES_GE_ID"/>
+        </many-to-one>
+        
+        <many-to-one name="publisher" class="jgamebase.db.model.Publisher" foreign-key="GAMES_PUBLISHERS" lazy="proxy">
+            <column name="PU_ID" index="GAMES_PU_ID"/>
+        </many-to-one>
+        
+        <many-to-one name="difficulty" class="jgamebase.db.model.Difficulty" foreign-key="GAMES_DIFFICULTY" lazy="proxy">
+            <column name="DI_ID" index="GAMES_DI_ID"/>
+        </many-to-one>
+
+        <many-to-one name="cracker" class="jgamebase.db.model.Cracker" foreign-key="GAMES_CRACKERS" lazy="proxy">
+            <column name="CR_ID" index="GAMES_CR_ID"/>
+        </many-to-one>
+
+        <property name="musicFilename" type="string">
+            <column name="SIDFILENAME" length="32672"/>
+        </property>
+        <property name="dateLastPlayed" type="string">
+            <column name="DATELASTPLAYED" length="50" default="''"/>
+        </property>
+        <property name="timesPlayed" type="integer">
+            <column name="TIMESPLAYED" default="0"/>
+        </property>
+        <property name="_ccode" type="integer">
+            <column name="CCODE" default="0" index="GAMES_CCODE"/>
+        </property>
+        <property name="highscore" type="string">
+            <column name="HIGHSCORE" length="30" />
+        </property>
+        <property name="gameFileExists" type="boolean">
+            <column name="FA" />
+        </property>
+        <property name="musicFileExists" type="boolean">
+            <column name="SA" />
+        </property>
+        <property name="isFavourite" type="boolean">
+            <column name="FAV" />
+        </property>
+
+        <many-to-one name="programmer" class="jgamebase.db.model.Programmer" foreign-key="GAMES_PROGRAMMERS" lazy="proxy">
+            <column name="PR_ID" default="0" index="GAMES_PR_ID"/>
+        </many-to-one>
+
+        <many-to-one name="language" class="jgamebase.db.model.Language" foreign-key="GAMES_LANGUAGES" lazy="proxy">
+            <column name="LA_ID" default="0" index="GAMES_LA_ID"/>
+        </many-to-one>
+
+        <property name="hasExtras" type="boolean">
+            <column name="EXTRAS" />
+        </property>
+        <property name="isClassic" type="boolean">
+            <column name="CLASSIC" />
+        </property>
+        <property name="rating" type="integer">
+            <column name="RATING"  default="0"/>
+        </property>
+        <property name="PalNtsc" type="integer">
+            <column name="V_PALNTSC" default="0"/>
+        </property>
+        <property name="length" type="integer">
+            <column name="V_LENGTH" default="0"/>
+        </property>
+        <property name="trainer" type="integer">
+            <column name="V_TRAINERS" default="0"/>
+        </property>
+        <property name="playersMin" type="integer">
+            <column name="PLAYERSFROM" default="0"/>
+        </property>
+        <property name="playersMax" type="integer">
+            <column name="PLAYERSTO" default="0"/>
+        </property>
+        <property name="isSimultaneouslyPlayable" type="boolean">
+            <column name="PLAYERSSIM" />
+        </property>
+        <property name="isAdult" type="boolean">
+            <column name="ADULT" />
+        </property>
+        <property name="note" type="string">
+            <column name="MEMOTEXT" length="32672" default="''"/>
+        </property>
+        <property name="prequelId" type="integer">
+            <column name="PREQUEL" default="0"/>
+        </property>
+        <property name="sequelId" type="integer">
+            <column name="SEQUEL" default="0"/>
+        </property>
+        <property name="relatedId" type="integer">
+            <column name="RELATED" default="0"/>
+        </property>
+        <property name="control" type="integer">
+            <column name="CONTROL" default="0"/>
+        </property>
+        <property name="crc" type="string">
+            <column name="CRC" length="32" default="''" index="GAMES_CRC"/>
+        </property>
+        <property name="filesize" type="integer">
+            <column name="FILESIZE" default="0"/>
+        </property>
+        <property name="version" type="integer">
+            <column name="VERSION" default="1"/>
+        </property>
+        <property name="keyValuePairs" type="string">
+            <column name="GEMUS" length="32672" default="''"/>
+        </property>
+        <property name="lengthType" type="integer">
+            <column name="V_LENGTHTYPE" default="0"/>
+        </property>
+        
+        <property name="comment" type="string">
+            <column name="COMMENT" length="255" />
+        </property>
+        <property name="versionComment" type="string">
+            <column name="V_COMMENT" length="255" />
+        </property>
+        <property name="_hasLoadingScreen" type="integer">
+            <column name="V_LOADINGSCREEN" default="0"/>
+        </property>
+        <property name="_hasHighscoreSaver" type="integer">
+            <column name="V_HIGHSCORESAVER" default="0"/>
+        </property>
+        <property name="_hasIncludedDocs" type="integer">
+            <column name="V_INCLUDEDDOCS" default="0"/>
+        </property>
+        <property name="_needsTruedriveEmu" type="integer">
+            <column name="V_TRUEDRIVEEMU" default="0"/>
+        </property>
+        
+        <many-to-one name="artist" class="jgamebase.db.model.Artist" foreign-key="GAMES_ARTISTS" lazy="proxy">
+            <column name="AR_ID" default="0" index="GAMES_AR_ID"/>
+        </many-to-one>
+
+        <many-to-one name="developer" class="jgamebase.db.model.Developer" foreign-key="GAMES_DEVELOPERS" lazy="proxy">
+            <column name="DE_ID" default="0" index="GAMES_DE_ID"/>
+        </many-to-one>
+
+        <many-to-one name="license" class="jgamebase.db.model.License" foreign-key="GAMES_LICENSES" lazy="proxy">
+            <column name="LI_ID" default="0" index="GAMES_LI_ID"/>
+        </many-to-one>
+
+        <many-to-one name="rarity" class="jgamebase.db.model.Rarity" foreign-key="GAMES_RARITIES" lazy="proxy">
+            <column name="RA_ID" default="0" index="GAMES_RA_ID"/>
+        </many-to-one>
+
+        <property name="webLinkName" type="string">
+            <column name="WEBLINK_NAME" length="255" />
+        </property>
+        <property name="webLinkUrl" type="string">
+            <column name="WEBLINK_URL" length="32672"/>
+        </property>
+        <property name="vWebLinkName" type="string">
+            <column name="V_WEBLINK_NAME" length="255" />
+        </property>
+        <property name="vWebLinkUrl" type="string">
+            <column name="V_WEBLINK_URL" length="32672"/>
+        </property>
+        
+        <property name="hasTitleScreen" type="integer">
+            <column name="V_TITLESCREEN" default="0"/>
+        </property>
+        <property name="isPlayable" type="integer">
+            <column name="V_PLAYABLE" default="0"/>
+        </property>
+        <property name="isOriginal" type="integer">
+            <column name="V_ORIGINAL" default="0"/>
+        </property>
+        <property name="cloneOf" type="integer">
+            <column name="CLONEOF" default="0"/>
+        </property>
+        <property name="reviewRating" type="integer">
+            <column name="REVIEWRATING" default="0"/>
+        </property>
+        
+        <list name="extras" table="EXTRAS" schema="APP" cascade="all">
+			<key column="GA_ID" not-null="true"/>
+			<list-index column="DISPLAYORDER"/>
+			<one-to-many class="jgamebase.db.model.Extra" not-found="ignore"/>
+		</list>
+    </class>
+</hibernate-mapping>

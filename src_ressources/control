@@ -1,0 +1,21 @@
+Package: jgamebase
+Version: 0.64-6
+Maintainer: Frank Gerbig <fgerbig@sourceforge.net>
+Installed-Size: 67128
+Priority: optional
+Section: games
+Architecture: all
+Source:
+Depends:  java6-runtime
+Pre-Depends:
+Recommends:  vice, mess, xmess
+Suggests:  audacious, audacious-plugins, sidplay, xsidplay
+Breaks:
+Conflicts:
+Replaces:
+Provides:
+Homepage: http://jgamebase.sourceforge.net
+Description: A fully-featured retro-gaming emulator frontend and game database utility.
+ It is a sister application to the Windows(TM) program GameBase (without "j"),
+ the official frontend for the Gamebase64 Collection.
+

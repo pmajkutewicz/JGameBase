@@ -1,0 +1,27 @@
+===Support for GB1.3 Databases, new GUI
+
+Date: 29.10.2011
+
+A new release (version 0.50) of jGameBase has been released.
+
+<br><b>New GUI</b>
+&nbsp;&nbsp;- <i>Scaling screenshots</i>
+&nbsp;&nbsp;- <i>Support for animations</i>
+&nbsp;&nbsp;- <i>Extras icon row</i>
+&nbsp;&nbsp;- <i>Included Java C64 emulator JSwingC64 and SID emulator JSidplay</i>
+
+<br><b>Database</b>
+&nbsp;&nbsp;- <i>New DB schema (compatible with gamebase 1.3)</i>
+&nbsp;&nbsp;- <i>Automatic upgrade of database format</i>
+&nbsp;&nbsp;- <i>Import is now done via jackcess (all java access import) instead of via the external mdb-tools</i>
+&nbsp;&nbsp;- <i>Access export</i>
+
+<br><b>New Functionality</b>
+&nbsp;&nbsp;- <i>Overlays are zipped changes to GameBase databases that are automatically extracted (e.g. scripts etc.)</i>
+&nbsp;&nbsp;- <i>execution of games/music via javascript</i>
+
+<br><b>Bugs Fixed</b>
+&nbsp;&nbsp;- <i>Fixed adult filter</i>
+
+<p></p><br clear="all" />
+

@@ -1,0 +1,74 @@
+<text>
+<br clear="all">
+
+<div id="links">
+
+<p class="head">About</p>
+
+<i>jGameBase</i> is a fully-&shy;featured retro-<wbr>gaming <b>emu&shy;lator front&shy;end</b>
+and <b>game data&shy;base</b> utility. It is a <b>sister app&shy;lication</b> to the Windows<b>&trade;</b> program <a href="http://bu22.com/" target="_blank"><b>GameBase</b></a>
+(without "j"), the official frontend for the <a href="http://www.gb64.com/" target="_blank">GB64 Collection</a> containing more than <b>20.000</b> C64 games.<br>
+<br>
+
+
+<i>jGameBase</i> <b>sup&shy;ports</b> vir&shy;tually <b>any emu&shy;lator</b> for <b>any sys&shy;tem</b> <a class="thumbnail" href="images/jGB_Amiga.png" target="_new"><img
+ class="bild-re" src="images/jGB_Amiga_s.png" alt="Screenshot of Amiga GameBase" style="margin: 3px 5px 5px 5px; vertical-align: bottom;"
+ border="0"><span><img src="images/jGB_Amiga_m.png" /><br />Screenshot of Commodore Amiga GameBase</span></a>and has ver&shy;satile <b>data&shy;base</b> search&shy;ing and filter&shy;ing <b>capa&shy;bilities</b>. 
+
+<br>
+<br>
+
+There are data&shy;bases for <b>Apple II</b>, <b>Atari ST</b>, Coleco Coleco&shy;Vision, Commo&shy;dore <b>Amiga</b>, Commo&shy;dore <b>C64</b>, <a class="thumbnail" href="images/jGB_SNES.png" target="_new"><img class="bild-le" src="images/jGB_SNES_s.png" alt="Screenshot of Nintendo SNES GameBase" style="margin: 8px 5px 5px 0px; vertical-align: bottom;" border="0"><span><img src="images/jGB_SNES_m.png" /><br />Screenshot of SNES GameBase</span></a>Commo&shy;dore <b>VIC20</b>, Nintendo <b>NES</b>, Nin&shy;tendo&nbsp;<b>SNES</b>, and Sinclair ZX&shy;Spectrum.<br>
+
+
+<br>
+
+
+
+</div>
+
+<div id="mitte">
+<p style="margin: 40px 0px 0px 10px;">
+
+<i>jGameBase</i> <b>makes playing</b> the <b>games and songs</b> you remember from the good old times <b>very easy</b>, there is <b>no</b> need to
+remember lots of <a class="thumbnail" href="images/jGB_ST.png" target="_new"><img class="bild-le" src="images/jGB_ST_s.png" alt="Screenshot of Atari ST GameBase" style="margin: 3px 5px 5px 0px; vertical-align: bottom;" border="0"><span><img src="images/jGB_ST_m.png" /><br />Screenshot of Atari ST GameBase</span></a><b>com&shy;mand line para&shy;meters or</b> to fid&shy;dle with <b>con&shy;figuration set&shy;tings</b>. 
+
+
+<br>
+<br>
+<a href="http://java.com"><img class="bild-re" src="images/java.png" alt="Java Logo" style="margin: 5px 14px 5px 10px;" border="0"></a>Programmed in <a href="http://java.com">Java&trade;</a> you can use <i>jGameBase</i>
+<b>on nearly every computer</b>.<br>
+
+<br>
+And best of all - it is <b>Open Source</b>.<br>
+ <a href="https://www.gnu.org/licenses/gpl-3.0-standalone.html" target="_new"><img class="bild-le" src="images/gpl.png" alt="GPL v3 logo" style="margin: 10px 15px 5px 0px; vertical-align: bottom;" border="0"></a>Released under the
+<span style="font-weight: bold;"><a href="https://www.gnu.org/licenses/gpl-3.0-standalone.html" target="_new">GPL</a></span> you are <span
+ style="font-weight: bold;">free</span> to <b>use and
+distribute</b> it.
+
+<br>
+<br>
+
+<span style="font-size:x-large">&nbsp;&nbsp;So</span> - <a class="info"><span class="info">&nbsp;Christmas???&nbsp;</span>what are you waiting for</a><span style="font-size:x-large; ">?</span>
+<br>
+<a href="http://sourceforge.net/project/platformdownload.php?group_id=177156" target="_new"><span style="font-size:large">Download <i>jGameBase</i></span></a> and enjoy the <b>memories</b> of the <b>good old times</b>!
+</p>
+
+
+
+
+</div>
+
+</text>
+
+<column>
+<div id="rechts">
+<p style="">
+<p><i>Java&trade;</i> is a registered trademark of Oracle Corporation</p>
+<p><i>Linux&trade;</i> is a registered trademark of Linus Torvalds and others</p>
+<p><i>Macintosh&trade;</i> is a registered trademark of Apple Inc.</p>
+<p><i>Windows&trade;</i> is a registered trademark of Microsoft Corporation</p>
+</p>
+<br clear="all" />
+</div>
+</column>

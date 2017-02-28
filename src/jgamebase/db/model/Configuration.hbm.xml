@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="jgamebase.db.model.Configuration" table="CONFIG" schema="APP">
+        <composite-id name="id" class="jgamebase.db.model.ConfigId">
+            <key-property name="majorVersion" type="integer">
+                <column name="MAJORVERSION" default="0" not-null="true"/>
+            </key-property>
+        
+            <key-property name="minorVersion" type="integer">
+                <column name="MINORVERSION" default="0" not-null="true"/>
+            </key-property>
+	    
+	        <key-property name="officialUpdateNumber" type="integer">
+    	        <column name="OFFICIALUPDATE" default="0" not-null="true"/>
+        	</key-property>
+        </composite-id>
+        
+        <property name="firstloadMessage" type="string">
+            <column name="FIRSTLOADMESSAGE" length="32672" />
+        </property>
+        
+        <property name="firstloadGemusAsk" type="integer">
+            <column name="FIRSTLOADGEMUSASK" default="0" />
+        </property>
+        
+        <property name="databaseName" type="string">
+            <column name="DATABASENAME" length="255" />
+        </property>
+        
+        <property name="windowTitle" type="string">
+            <column name="GAMEBASEWINDOWTITLE" length="255" />
+        </property>
+    </class>
+</hibernate-mapping>

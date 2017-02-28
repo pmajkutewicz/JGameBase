@@ -1,0 +1,9 @@
+===First Public Beta Released
+
+Date: 15.10.2006
+
+The first public beta (version 0.06) of jGameBase has been released.
+Basic functionality is working, but compared to GameBase many things are missing.
+<p></p><br clear="all" />
+
+

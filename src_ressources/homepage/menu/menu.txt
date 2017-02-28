@@ -1,0 +1,13 @@
+[
+    "About" %index.txt none
+
+    "News" %news.html none
+
+    "Download" %download.txt none
+
+    "Manual" %manual.html none
+
+    "Emulators" %scripts.txt none
+
+    "Contact" %contact.txt none
+]

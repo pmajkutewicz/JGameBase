@@ -1,0 +1,23 @@
+===First Release Candidate Released
+
+Date: 26.09.2009
+
+The first release candidate (version 0.44) of jGameBase has been released.
+
+<br><b>Bugs Fixed</b>
+&nbsp;&nbsp;- <i>Database hang fixed</i>
+
+<br><b>New Features</b>
+&nbsp;&nbsp;- <i>The jToolbox is no longer needed</i>
+
+&nbsp;&nbsp;- <i>File System Hierarchy Standard (FHS)</i>
+
+&nbsp;&nbsp;- <i>You can now specify multiple paths for all objects</i>
+
+&nbsp;&nbsp;- <i>Default paths</i>
+
+&nbsp;&nbsp;- <i>Support for RAR and 7Zip compressed files.</i>
+
+<p></p><br clear="all" />
+
+

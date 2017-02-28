@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="jgamebase.db.model.ItemViewColumn" table="VIEWCOLUMNS" schema="APP">
+        <id name="id" type="integer">
+            <column name="VC_ID" index="VIEWCOLUMNS_VC_ID"/>
+            <generator class="increment" />
+        </id>
+        <property name="viewId" type="integer">
+            <column name="VW_ID" index="VIEWCOLUMNS_VW_ID"/>
+        </property>
+        <property name="modelIndex" type="integer">
+            <column name="MODELINDEX"/>
+        </property>
+        <property name="viewIndex" type="integer">
+            <column name="VIEWINDEX"/>
+        </property>
+        <property name="width" type="integer">
+            <column name="WIDTH"/>
+        </property>
+        <property name="filter" type="string">
+            <column name="FILTER" length="32"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="jgamebase.db.model.Genre" table="GENRES" schema="APP">
+        <id name="id" type="integer">
+            <column name="GE_ID" index="GENRES_GE_ID"/>
+            <generator class="increment" />
+        </id>
+
+        <many-to-one name="parentGenre" class="jgamebase.db.model.ParentGenre" foreign-key="GENRES_PGENRES" lazy="false">
+            <column name="PG_ID" index="GENRES_PG_ID" not-null="true"/>
+        </many-to-one>
+
+        <property name="name" type="string">
+            <column name="GENRE" length="255" />
+        </property>
+
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html lang="en" style="height: 100%;">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+<meta name="keywords" content=
+"jgamebase,gamebase,gamebase64,gb64,emulator,frontend,front-end,game,commodore,c64,amiga,atari,st,spectrum,zx,utility,utilities,tool,tools,program,open,source,open source,Gnu,General,Public,Licence,Gnu General Public Licence,GPL,free,no cost,java,JAVA,Linux,Unix,Macintosh,OS-X,OS/2,OS independent,OS-independent">
+<meta name="description" content="Homepage of jGameBase a fully-featured retro-gaming emulator frontend and game database utility (e.g. for the GB64 collection of C64 games) released under the GPL">
+<meta name="author" content="F. Gerbig">
+<meta name="robots" content="all">
+<meta name="revisit-after" content="20 days">
+
+<meta name="DC.Title" content="jGameBase">
+<meta name="DC.Creator" content="F. Gerbig">
+<meta name="DC.Subject" content="computer software emulator frontend">
+<meta name="DC.Description" content="Homepage of jGameBase a fully-featured retro-gaming emulator frontend and game database utility (e.g. for the GB64 collection of C64 games) released under the GPL">
+<meta name="DC.Publisher" content="F. Gerbig">
+<meta name="DC.Type" content="Software">
+<meta name="DC.Format" content="text/html">
+<meta name="DC.Identifier" content="http://jgamebase.sourceforge.net/">
+<meta name="DC.Language" content="en">
+<meta name="DC.Rights" content="GPL">
+
+<title>jGameBase -  Emulators</title>
+
+<link rel="shortcut icon" href="favicon.ico"/>
+
+<link rel="stylesheet" href="styles/menu.css" type="text/css" media="screen"/>
+<link rel="stylesheet" href="styles/content.css" type="text/css" media="screen"/>
+<link rel="stylesheet" href="styles/2spaltig.css" type="text/css" media="screen"/>
+<!-- INDEX -->
+</head>
+<body>
+<div id="header">
+<img src="images/header770.gif" width="770" height="90" border="0" alt="">
+<ul id="popMenu">
+<li><a href="index.html">About</a>
+<li><a href="news.html">News</a>
+<li><a href="download.html">Download</a>
+<li><a href="manual.html">Manual</a>
+<li><a href="scripts.html">Emulators</a>
+</li>
+<li><a href="contact.html">Contact</a>
+</ul>
+<!-- popMenu ende -->
+<div id="kopf"><font color="#000000" style="vertical-align: sub;"><i>j</font>GameBase</i></div><!-- kopf ende -->
+</div>
+<!-- header ende -->
+<div id="content">
+<br clear="all">
+<div id="submenu">
+
+<p>
+1. <a href="#1">Starting</a><br/>
+&nbsp;&nbsp;1.1 <a href="#11">Executable</a><br/>
+&nbsp;&nbsp;1.2 <a href="#12">JavaScript</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1.2.1 <a href="#121">Reference</a><br/>
+&nbsp;&nbsp;1.3 <a href="#13">Other script</a><br/><br/>
+</p>
+
+</div>
+<div id="mitte">
+
+<p class="head">Using Emulators</p>
+
+<h2><a name="1">1. Starting Emulators from <i>jGameBase</i></a></h2>
+
+<p>There are three ways to start an emulator.</p>
+
+<h3><a name="11">1.1 Start executable directly</a></h3>
+<p>This is the simplest method of starting an emulator. While defining the emulator (Menu "Emulators") specify the executable of the emulator in the field "Command to execute". This command will be executed with the "fileToRun" as parameter.</p>
+
+<h3><a name="12">1.2 Start via JavaScript</a></h3>
+<p>This is the <u>preferred method</u> of starting an emulator. The script has to have the file extension ".sh" and has to reside in the databases "Scripts" directory. The first command line parameter passed to the script is the "fileToRun", but there are many JavaScript variables set. Your script will be prefixed by an include ("Includes/includes.sh)) containing some predefined functions that simplify writing an emulator script.</p>
+
+<p><b>If you write scripts please send them to me so I can include them in the next version of </i>jGameBase</i></b></p>
+
+
+<p><b>Example script</b>:<br/>This script starts the emulator executable "c64" after checking that the file type (extension) is supported and changing the configuration file to use the correct joystick port:</p>
+
+<p>
+
+<pre class="hl"><span class="hl slc">//  PLEASE SET YOUR EMULATOR PROPERTIES AS FOLLOWS:</span>
+<span class="hl slc">//  Emulator File: c64.js</span>
+<span class="hl slc">//  Emulator configuration file: c64.cfg</span>
+<span class="hl slc">//  File Types: &quot;d64;t64&quot;</span>
+
+command <span class="hl sym">=</span> <span class="hl str">&quot;c64&quot;</span><span class="hl sym">;</span>
+<span class="hl kwd">Add_CLP</span><span class="hl sym">(</span>command<span class="hl sym">);</span>
+
+<span class="hl slc">// check the file types</span>
+<span class="hl kwa">if</span> <span class="hl sym">(</span>itemType<span class="hl sym">.</span><span class="hl kwd">contains</span><span class="hl sym">(</span><span class="hl str">&quot;d64&quot;</span><span class="hl sym">,</span> <span class="hl str">&quot;t64&quot;</span><span class="hl sym">)) {</span>
+
+	<span class="hl slc">// set the item controls</span>
+	<span class="hl kwa">if</span> <span class="hl sym">(</span>itemControl <span class="hl sym">===</span> JOYPORT1<span class="hl sym">) {</span>
+		<span class="hl slc">// set joystick 1 (&quot;input=1&quot; in the config file)</span>
+		<span class="hl kwd">Set_CFG_Value</span><span class="hl sym">(</span>emulatorConfigFile<span class="hl sym">,</span> <span class="hl str">&quot;input&quot;</span><span class="hl sym">,</span> <span class="hl str">&quot;1&quot;</span><span class="hl sym">);</span>
+	<span class="hl sym">}</span> <span class="hl kwa">else</span> <span class="hl sym">{</span>
+		<span class="hl slc">// set joystick 2</span>
+		<span class="hl kwd">Set_CFG_Value</span><span class="hl sym">(</span>emulatorConfigFile<span class="hl sym">,</span> <span class="hl str">&quot;input&quot;</span><span class="hl sym">,</span> <span class="hl str">&quot;2&quot;</span><span class="hl sym">);</span>
+	<span class="hl sym">}</span>
+
+	<span class="hl slc">// run the emulator</span>
+	<span class="hl kwd">Run_Emulator</span><span class="hl sym">();</span>
+<span class="hl sym">}</span> <span class="hl kwa">else</span> <span class="hl sym">{</span>
+	<span class="hl slc">// invalid item file type</span>
+	<span class="hl kwd">Show_Message</span><span class="hl sym">(</span>NOT_SUPPORTED <span class="hl sym">+</span> <span class="hl str">&quot;</span><span class="hl esc">\n\n</span><span class="hl str">Supported types: D64, T64&quot;</span><span class="hl sym">);</span>
+<span class="hl sym">}</span>
+
+</pre>
+</p>
+
+<h4><a name="121">1.2.1 Reference of predefined variables, objects and methods</a></h4>
+
+<p>As mentioned above there are predefined variables, objects and methods to simplify writing JavaScript scripts. Please click <a href="symbols/_global_.html">here</a> for the complete reference.</p>
+
+<p><b>As JavaScript can be difficult to debug, you best start by modifying an existing script.<br/>
+If you encounter problems check the jgamebase.log in the database directory.</b>
+</p>
+
+<h3><a name="13">1.3 Start via other script</a></h3>
+<p>If no registered script engine for the script file extension is found in Java the script is started directly. This makes it possible to start scripts written in other scripting languages (e.g. BASH, Python, Lua or Ruby). The downside is that these scripts are often not as platform independent as JavaScript. The first command line parameter passed to the script is the "fileToRun", the environment variables set are the same as for JavaScript scripts, but there are no predefined includes.</p>
+
+
+</div>
+<!-- links ende -->
+<!-- rechts ende -->
+<div id="spacer">&nbsp;</div>
+
+<div id="abbinder">
+<table style="text-align: left; width: 100%;" border="0">
+  <tbody>
+    <tr>
+      <td><a href="index.html"><small>Home</small></a><small>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="mailto:fgerbig%40users.sourceforge%2enet?subject=jGameBase-Homepage">Mail&nbsp;Webmaster</a></small></td>
+      <td colspan="1" rowspan="2" style="text-align: center;"><img src="images/LinuxGameTome_4stars.png" alt="rated four out of five stars (silver rating) on 'The Linux Game Tome'" border="0" height="40" width="85"></td>
+      <td colspan="1" rowspan="2" style="text-align: right;"><a href="http://sourceforge.net/projects/jgamebase"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=177156&amp;type=12" alt="Get jGameBase - Universal Emulator Frontend at SourceForge.net. Fast, secure and Free Open Source software downloads" border="0" height="30" width="120"></a></td>
+    </tr>
+    <tr>
+      <td><small>Page last updated: 
+
+03. January 2017.
+</small></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<!-- abbinder ende -->
+</div>
+<!-- content ende -->
+</body>
+</html>

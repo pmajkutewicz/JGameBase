@@ -1,0 +1,6 @@
+?package(jgamebase):	needs="X11" \
+		section="Games" \
+		title="jGameBase" \
+		command="/usr/games/jgamebase" \
+		icon="/usr/share/pixmaps/jgamebase.xpm" \
+		longtitle="Universal Emulator Frontend"

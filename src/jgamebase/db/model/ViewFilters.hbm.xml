@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="jgamebase.db.model.ItemViewFilter" table="VIEWFILTERS" schema="APP">
+        <id name="id" type="integer">
+            <column name="VF_ID" index="VIEWFILTERS_VF_ID"/>
+            <generator class="increment" />
+        </id>
+        <property name="viewId" type="integer">
+            <column name="VW_ID" index="VIEWFILTERS_VW_ID"/>
+        </property>
+        <property name="gameTable" type="string">
+            <column name="FIELDTABLE" length="128" />
+        </property>
+        <property name="gameField" type="string">
+            <column name="FIELDNAME" length="128" />
+        </property>
+        <property name="operator" type="integer">
+            <column name="OPERATOR" />
+        </property>
+        <property name="clauseType" type="integer">
+            <column name="CLAUSETYPE" />
+        </property>
+        <property name="clauseData" type="string">
+            <column name="CLAUSEDATA" length="64" />
+        </property>
+        <property name="musicField" type="string">
+            <column name="MUSICFIELDNAME" length="128" />
+        </property>
+        <property name="musicTable" type="string">
+            <column name="MUSICFIELDTABLE" length="128" />
+        </property>
+    </class>
+</hibernate-mapping>

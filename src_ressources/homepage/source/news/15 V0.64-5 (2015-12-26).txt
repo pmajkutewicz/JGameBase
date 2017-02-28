@@ -1,0 +1,14 @@
+===Bug fix, Bug Tracker
+
+Date: 26.12.2015
+
+Release (version 0.64-5) of jGameBase has been released.
+
+<br><b>New features</b>
+&nbsp;&nbsp;- <i>C64lite is now based on Gamebase64 V14</i>
+
+<br><b>Bugs Fixed</b>
+&nbsp;&nbsp;- <i>database export to MS Access (*.mdb) was broken</i>
+
+<p></p><br clear="all" />
+

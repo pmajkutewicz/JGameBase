@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="jgamebase.db.model.Musician" table="MUSICIANS" schema="APP">
+        <id name="id" type="integer">
+            <column name="MU_ID" index="MUSICIANS_MU_ID"/>
+            <generator class="increment" />
+        </id>
+        <property name="photoFilename" type="string">
+            <column name="PHOTO" length="255"/>
+        </property>
+        <property name="name" type="string">
+            <column name="MUSICIAN" length="255" index="MUSICIAN_NAME"/>
+        </property>
+        <property name="group" type="string">
+            <column name="GRP" length="255"/>
+        </property>
+        <property name="nickname" type="string">
+            <column name="NICK" length="255"/>
+        </property>
+    </class>
+</hibernate-mapping>

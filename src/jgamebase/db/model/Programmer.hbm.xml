@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="jgamebase.db.model.Programmer" table="PROGRAMMERS" schema="APP">
+        <id name="id" type="integer">
+            <column name="PR_ID" index="PROGRAMMERS_PR_ID"/>
+            <generator class="increment" />
+        </id>
+        <property name="name" type="string">
+            <column name="PROGRAMMER" length="255" index="PROGRAMMERS_NAME"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,9 @@
+Before you start WebContent 4 all, you must install REBOL. Then you can run webcontent4all.r
+
+Open the file with any texteditor and modify the startup options. If you want to upload to an FTP Server (INTERNET) you must enable the FTP option from OFF to ON.
+
+Have fun with the program! And believe me, you will have fun!
+
+Please, register your version with a simple email. Send a mail with subject "register" to:
+
+info at webcontent4all dot com

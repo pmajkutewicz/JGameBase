@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- 
+        Auto-generated mapping file from
+        the hibernate.org cfg2hbm engine
+-->
+    <class name="jgamebase.db.model.ItemView" table="VIEWDATA" schema="APP">
+        <id name="id" type="integer">
+            <column name="ID" />
+            <generator class="increment" />
+        </id>
+        <property name="mode" type="integer">
+            <column name="FILTERMODE" default="0"/>
+        </property>
+        <property name="name" type="string">
+            <column name="TITLE" length="128" default="''"/>
+        </property>
+        <property name="filterCount" type="integer">
+            <column name="FILTERCOUNT" default="0"/>
+        </property>
+        <property name="include" type="integer">
+            <column name="INCLUDEMUSICTABLE" default="0"/>
+        </property>
+        <property name="listViewType" type="integer">
+            <column name="LISTVIEWTYPE" default="0"/>
+        </property>
+        <property name="sortColumn" type="integer">
+            <column name="SORTCOLUMN" default="0"/>
+        </property>
+        <property name="_sortOrder" type="integer">
+            <column name="SORTORDER" default="0"/>
+        </property>
+        <property name="selectedItem" type="string">
+            <column name="SELECTEDITEM" length="16" default="''"/>
+        </property>
+        <property name="extraColumns" type="string">
+            <column name="EXTRACOLUMNS" length="255" default="''"/>
+        </property>
+        <property name="ordinal" type="integer">
+            <column name="ORDINAL" default="0"/>
+        </property>
+        
+        <set name="filters" table="VIEWFILTERS" schema="APP" cascade="all">  
+        	<key column="VW_ID"/>  
+        	<one-to-many class="jgamebase.db.model.ItemViewFilter" not-found="ignore"/>  
+        </set>
+         
+        <set name="columns" table="VIEWCOLUMNS" schema="APP" cascade="all">  
+        	<key column="VW_ID"/>  
+        	<one-to-many class="jgamebase.db.model.ItemViewColumn" not-found="ignore"/>  
+        </set>
+         
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+package jgamebase.plugins.extractor.sevenzip.Common;
+
+public class RecordVector<E> extends java.util.Vector<E> {
+  public RecordVector() {
+    super();
+  }
+
+  public void Reserve(final int s) {
+    ensureCapacity(s);
+  }
+
+  public E Back() {
+    return get(elementCount - 1);
+  }
+
+  public E Front() {
+    return get(0);
+  }
+
+  public void DeleteBack() {
+    remove(elementCount - 1);
+  }
+}

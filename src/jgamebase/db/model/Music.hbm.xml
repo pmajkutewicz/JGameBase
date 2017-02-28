@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="jgamebase.db.model.Music" table="MUSIC" schema="APP">
+
+		<id name="id">
+			<column name="GA_ID" not-null="true" index="MUSIC_GA_ID"/>
+			<generator class="increment" />
+		</id>
+
+		<property name="name" type="string">
+			<column name="NAME" default="''" index="MUSIC_NAME" />
+		</property>
+
+		<property name="filename" type="string">
+			<column name="FILENAME" length="32672" default="''" />
+		</property>
+
+		<many-to-one name="musician" class="jgamebase.db.model.Musician" foreign-key="MUSIC_MUSICIANS" lazy="false">
+			<column name="MU_ID" index="MUSIC_MU_ID" not-null="true" />
+		</many-to-one>
+
+		<property name="isFavourite" type="boolean">
+			<column name="SFAV" />
+		</property>
+		<property name="fileExists" type="boolean">
+			<column name="SA" />
+		</property>
+		<property name="isAdult" type="boolean">
+			<column name="ADULT" />
+		</property>
+	</class>
+</hibernate-mapping>

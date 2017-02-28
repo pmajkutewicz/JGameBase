@@ -1,0 +1,12 @@
+===Bug fix
+
+Date: 27.06.2014
+
+Release (version 0.64-3) of jGameBase has been released.
+
+<br><b>Bugs Fixed</b>
+&nbsp;&nbsp;- <i>fixed a problem with current rhino (java-javascript engine) releases</i>
+
+
+<p></p><br clear="all" />
+

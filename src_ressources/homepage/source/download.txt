@@ -1,0 +1,43 @@
+<text>
+<p class="head">Download</p>
+
+<p>This program is distributed in the hope that it will be useful,
+but <strong>WITHOUT ANY WARRANTY</strong>; without even the implied warranty of
+<strong>MERCHANTABILITY</strong> or <strong>FITNESS FOR A PARTICULAR PURPOSE</strong>.</p>
+
+<br>
+
+
+
+
+<p class="subhead"><a name="licence">1. Licence "GNU GENERAL PUBLIC LICENSE"</a></p>
+
+<p>This program is free software; you can redistribute it and/or modify it under the terms of the "<a href="https://www.gnu.org/licenses/gpl-3.0-standalone.html" target="_new">GNU&nbsp;General&nbsp;Public&nbsp;License</a>" as published by the <a href="http://www.fsf.org/" target="_new">Free&nbsp;Software&nbsp;Foundation</a>; either version 3 of the License, or any later version.</p>
+
+<p>The jGameBase icon (converted from "<a href="http://openclipart.org/media/files/brunurb/5612" target="_new">Retro&nbsp;Joystick&nbsp;001</a>" on the <a href="http://openclipart.org" target="_new">Open&nbsp;Clip&nbsp;Art&nbsp;Library</a>) is licensed as public domain.</p>
+
+
+<br>
+
+<p class="subhead"><a name="prerequisite">2. Prerequisite</a></p> <p>As this
+programm is written in Java, you need to have a <span style="font-weight:
+bold;"><a href="http://java.com">Java-Runtime-Environment (JRE)</a></span>
+ <span style="font-weight: bold;">version 6 or greater</span>
+installed on your system.</p> <br>
+
+<p class="subhead"><a name="download">3. Download jGameBase</a></p>
+<p>Download the <a href="http://sourceforge.net/project/platformdownload.php?group_id=177156" target="_new">LATEST RELEASE</a> or <a href="http://sourceforge.net/projects/jgamebase/files/jGameBase/">browse all files</a>.
+
+</p>
+
+<p></p>
+</text>
+
+
+<column>
+<p>
+1. <a href="#licence">Licence</a><br>
+2. <a href="#prerequisite">Prerequisite</a><br>
+3. <a href="#download">Download</a><br>
+</p>
+</column>

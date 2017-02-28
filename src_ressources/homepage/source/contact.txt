@@ -1,0 +1,16 @@
+<text>
+
+<p class="head">Contact</p>
+
+<p>- To <b>file a bug report</b> please use the <a href="http://sourceforge.net/tracker/?group_id=177156&atid=880114" target="_new">bug tracker</a>.</p>
+<p>- To <b>contact me</b> <a href="http://sourceforge.net/sendmessage.php?touser=853981" target="_new">send me a message</a> (requires an SourceForge account) or <a href="mailto:fgerbig%40users&#46;sourceforge%2enet?subject=jGameBase">write an e-mail</a>.</p>
+
+
+</text>
+
+<column>
+
+<p><img class="bild-li" src="images/info.gif" width="35" height="35" border="0" alt="">&nbsp;<a href="http://sourceforge.net/sendmessage.php?touser=853981" target="_new">Send a message</a>
+<p><img class="bild-li" src="images/info.gif" width="35" height="35" border="0" alt="">&nbsp;<a href="mailto:fgerbig%40users&#46;sourceforge%2enet?subject=jGameBase">Write an e-mail</a>
+</p>
+</column>

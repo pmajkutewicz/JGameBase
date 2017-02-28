@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="jgamebase.db.model.Extra" table="EXTRAS" schema="APP">
+        <id name="id" type="integer">
+            <column name="EX_ID" index="EXTRAS_EX_ID"/>
+            <generator class="increment" />
+        </id>
+        <property name="gameId" type="integer" insert="false" update="false">
+            <column name="GA_ID" default="0" not-null="true"/>
+        </property>
+        <property name="displayOrder" type="integer" insert="false" update="false">
+            <column name="DISPLAYORDER" default="0" not-null="true" index="EXTRAS_DISPLAYORDER"/>
+        </property>
+        <property name="type" type="integer">
+            <column name="TYPE" default="0" not-null="true"/>
+        </property>
+        <property name="name" type="string">
+            <column name="NAME" not-null="true"/>
+        </property>
+        <property name="filename" type="string">
+            <column name="PATH" length="32672" not-null="true"/>
+        </property>
+        <property name="ea" type="boolean">
+            <column name="EA"/>
+        </property>
+        <property name="data" type="string">
+            <column name="DATA" length="32672"/>
+        </property>
+        <property name="fileToRun" type="string">
+            <column name="FILETORUN" length="32672"/>
+        </property>
+    </class>
+</hibernate-mapping>

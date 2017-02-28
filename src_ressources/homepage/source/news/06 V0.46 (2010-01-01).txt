@@ -1,0 +1,18 @@
+===Stable Release
+
+Date: 01.02.2010
+
+A stable release (version 0.46) of jGameBase has been released.
+
+<br><b>Bugs Fixed</b>
+&nbsp;&nbsp;- <i>Size of edit emulator window corrected</i>
+
+&nbsp;&nbsp;- <i>Emulator script would be called with a doubled path</i>
+
+&nbsp;&nbsp;- <i>Files with wrong case were not found</i>
+
+&nbsp;&nbsp;- <i>Some existing files would not be found due to trailing spaces</i>
+
+<p></p><br clear="all" />
+
+

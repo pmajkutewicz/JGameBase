@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project jgamebase with libraries in sub-folder">
+    <target name="create_run_jar">
+        <jar destfile="jgamebase.jar">
+            <manifest>
+                <attribute name="Main-Class" value="jgamebase.JGameBase"/>
+                <attribute name="Class-Path" value=". lib/antlr-2.7.6.jar lib/commons-collections-3.2.1.jar lib/commons-lang-2.6.jar lib/commons-logging-1.1.1.jar lib/derby.jar lib/dom4j-1.6.1.jar lib/hibernate3.jar lib/hibernate-jpa-2.0-api-1.0.1.Final.jar lib/jackcess-1.2.4.jar lib/javassist-3.12.0.GA.jar lib/jta-1.1.jar lib/log4j-1.2.16.jar lib/opencsv-2.3.jar lib/slf4j-api-1.6.3.jar lib/slf4j-log4j12-1.6.3.jar lib/swingx-1.6.1.jar"/>
+            </manifest>
+            <fileset dir="bin"/>
+        </jar>
+    </target>
+</project>
