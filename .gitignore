@@ -1,0 +1,9 @@
+#IntelliJ IDEA
+.idea
+*.iml
+
+#app files
+.lock
+*.log
+global.ini
+
