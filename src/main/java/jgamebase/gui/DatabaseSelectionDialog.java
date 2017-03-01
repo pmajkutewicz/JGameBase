@@ -22,6 +22,7 @@ import java.awt.Component;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import javax.swing.AbstractListModel;
@@ -31,6 +32,7 @@ import javax.swing.ListCellRenderer;
 
 import jgamebase.Const;
 import jgamebase.Const.CloseAction;
+import jgamebase.model.Database;
 import jgamebase.model.DatabaseSelection;
 
 /**
