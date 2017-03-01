@@ -248,10 +248,7 @@ public class DatabaseSelectionDialog extends javax.swing.JDialog {
   }
 
   public List<DatabaseSelection> getSelected() {
-    final List<DatabaseSelection> selected = new ArrayList<DatabaseSelection>();
-    selected.addAll((Collection<? extends DatabaseSelection>) Arrays.asList(list
-        .getSelectedValues()));
-    return selected;
+    return Collections.singletonList((Database) list.getSelectedValue());
   }
 
 }
