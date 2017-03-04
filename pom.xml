@@ -18,6 +18,7 @@
         <maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
         <maven-dependency-plugin.version>3.0.0</maven-dependency-plugin.version>
         <maven-jar-plugin.version>3.0.2</maven-jar-plugin.version>
+        <exec-maven-plugin.version>1.2.1</exec-maven-plugin.version>
         
         <antlr.version>2.7.6</antlr.version>
         <commons-collections.version>3.2.1</commons-collections.version>
@@ -119,7 +120,6 @@
         </dependency>
     </dependencies>
 
-
     <build>
         <finalName>jgamebase</finalName>
         <resources>
@@ -185,6 +185,37 @@
                     </execution>
                 </executions>
             </plugin>
+
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>${exec-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>default-cli</id>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>java</executable>
+                            <!-- optional -->
+                            <workingDirectory>${basedir}/src_ressources/jsdoc/</workingDirectory>
+                            <arguments>
+                                <argument>-jar</argument>
+                                <argument>${basedir}/src_ressources/jsdoc/jsrun.jar</argument>
+                                <argunemt>${basedir}/src_ressources/jsdoc/app/run.js </argunemt>
+                                <argument>-a</argument>
+                                <argument>-d=${project.build.directory}/jsdoc</argument>
+                                <argument>-t=${basedir}/src_ressources/jsdoc/templates/jsdoc</argument>
+                                <argument>${basedir}/src/main/resources/bin/Includes/includes.js</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            
+            
         </plugins>
     </build>
 </project>
