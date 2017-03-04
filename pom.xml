@@ -14,11 +14,14 @@
     </prerequisites>
     <properties>
         <java.version>1.8</java.version>
+        <release.dir>${project.build.directory}/release</release.dir>
+        
         <!-- maven stuff -->
         <maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
         <maven-dependency-plugin.version>3.0.0</maven-dependency-plugin.version>
         <maven-jar-plugin.version>3.0.2</maven-jar-plugin.version>
         <exec-maven-plugin.version>1.2.1</exec-maven-plugin.version>
+        <maven-assembly-plugin.version>3.0.0</maven-assembly-plugin.version>
         
         <antlr.version>2.7.6</antlr.version>
         <commons-collections.version>3.2.1</commons-collections.version>
@@ -119,7 +122,91 @@
             <version>${swingx-beaninfo.version}</version>
         </dependency>
     </dependencies>
-
+    
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-jar-plugin</artifactId>
+                        <version>${maven-jar-plugin.version}</version>
+                        <configuration>
+                            <outputDirectory>${release.dir}</outputDirectory>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>${exec-maven-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>default-cli</id>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <executable>java</executable>
+                                    <!-- optional -->
+                                    <workingDirectory>${basedir}/src_ressources/jsdoc/</workingDirectory>
+                                    <arguments>
+                                        <argument>-jar</argument>
+                                        <argument>${basedir}/src_ressources/jsdoc/jsrun.jar</argument>
+                                        <argunemt>${basedir}/src_ressources/jsdoc/app/run.js </argunemt>
+                                        <argument>-a</argument>
+                                        <argument>-d=${project.build.directory}/jsdoc</argument>
+                                        <argument>-t=${basedir}/src_ressources/jsdoc/templates/jsdoc</argument>
+                                        <argument>${basedir}/src/main/resources/bin/Includes/includes.js</argument>
+                                    </arguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-dependency-plugin</artifactId>
+                        <version>${maven-dependency-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>copy-dependencies</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>copy-dependencies</goal>
+                                </goals>
+                                <configuration>
+                                    <outputDirectory>
+                                        ${release.dir}/lib/
+                                    </outputDirectory>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <version>${maven-assembly-plugin.version}</version>
+                        <configuration>
+                            <finalName>${build.finalName}${project.version}</finalName>
+                            <appendAssemblyId>false</appendAssemblyId>
+                            <descriptors>
+                                <descriptor>src/main/assembly/bin.xml</descriptor>
+                            </descriptors>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>make-assembly</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+    
     <build>
         <finalName>jgamebase</finalName>
         <resources>
@@ -163,59 +250,8 @@
                             <Class-Path>./</Class-Path>
                         </manifestEntries>
                     </archive>
-
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>${maven-dependency-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>copy-dependencies</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>copy-dependencies</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>
-                                ${project.build.directory}/lib/
-                            </outputDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>${exec-maven-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>default-cli</id>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                        <configuration>
-                            <executable>java</executable>
-                            <!-- optional -->
-                            <workingDirectory>${basedir}/src_ressources/jsdoc/</workingDirectory>
-                            <arguments>
-                                <argument>-jar</argument>
-                                <argument>${basedir}/src_ressources/jsdoc/jsrun.jar</argument>
-                                <argunemt>${basedir}/src_ressources/jsdoc/app/run.js </argunemt>
-                                <argument>-a</argument>
-                                <argument>-d=${project.build.directory}/jsdoc</argument>
-                                <argument>-t=${basedir}/src_ressources/jsdoc/templates/jsdoc</argument>
-                                <argument>${basedir}/src/main/resources/bin/Includes/includes.js</argument>
-                            </arguments>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            
-            
         </plugins>
     </build>
 </project>
