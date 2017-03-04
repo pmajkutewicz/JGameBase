@@ -1,3 +1,6 @@
+#maven
+.target
+
 #IntelliJ IDEA
 .idea
 *.iml
