@@ -22,6 +22,9 @@
         <maven-jar-plugin.version>3.0.2</maven-jar-plugin.version>
         <exec-maven-plugin.version>1.2.1</exec-maven-plugin.version>
         <maven-assembly-plugin.version>3.0.0</maven-assembly-plugin.version>
+        <maven-findbugs-plugin.version>3.0.3</maven-findbugs-plugin.version>
+
+        <findbugs-maven-plugin.failOnError>false</findbugs-maven-plugin.failOnError>
         
         <antlr.version>2.7.6</antlr.version>
         <commons-collections.version>3.2.1</commons-collections.version>
@@ -38,6 +41,8 @@
         <slf4j-api.version>1.6.3</slf4j-api.version>
         <swingx.version>1.6.1</swingx.version>
         <swingx-beaninfo.version>1.6.5-1</swingx-beaninfo.version> <!-- should be 1.6.1, but not exist in maven -->
+        <findbugs-annotation.version>3.0.1u2</findbugs-annotation.version>
+        <fb-contrib.version>6.6.0</fb-contrib.version>
     </properties>
 
     <dependencies>
@@ -120,6 +125,13 @@
             <groupId>org.swinglabs.swingx</groupId>
             <artifactId>swingx-beaninfo</artifactId>
             <version>${swingx-beaninfo.version}</version>
+        </dependency>
+        
+        <!-- QA -->
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>annotations</artifactId>
+            <version>${findbugs-annotation.version}</version>
         </dependency>
     </dependencies>
     
@@ -250,6 +262,33 @@
                             <Class-Path>./</Class-Path>
                         </manifestEntries>
                     </archive>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <version>${maven-findbugs-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <effort>Max</effort>
+                    <threshold>High</threshold>
+                    <failOnError>${findbugs-maven-plugin.failOnError}</failOnError>
+                    <excludeFilterFile>${basedir}/src/main/config/findbugs_excludes.xml</excludeFilterFile>
+                    <plugins>
+                        <plugin>
+                            <groupId>com.mebigfatguy.fb-contrib</groupId>
+                            <artifactId>fb-contrib</artifactId>
+                            <version>${fb-contrib.version}</version>
+                        </plugin>
+                    </plugins>
                 </configuration>
             </plugin>
         </plugins>
