@@ -20,16 +20,16 @@
         <maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
         <maven-dependency-plugin.version>3.0.0</maven-dependency-plugin.version>
         <maven-jar-plugin.version>3.0.2</maven-jar-plugin.version>
-        <exec-maven-plugin.version>1.2.1</exec-maven-plugin.version>
+        <exec-maven-plugin.version>1.5.0</exec-maven-plugin.version>
         <maven-assembly-plugin.version>3.0.0</maven-assembly-plugin.version>
-        <maven-findbugs-plugin.version>3.0.3</maven-findbugs-plugin.version>
-        <jacoco-maven-plugin.version>0.7.2.201409121644</jacoco-maven-plugin.version>
-        <maven-surefire-plugin.version>2.17</maven-surefire-plugin.version>
+        <maven-findbugs-plugin.version>3.0.4</maven-findbugs-plugin.version>
+        <jacoco-maven-plugin.version>0.7.9</jacoco-maven-plugin.version>
+        <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
         
         <findbugs-maven-plugin.failOnError>false</findbugs-maven-plugin.failOnError>
         
         <antlr.version>2.7.6</antlr.version>
-        <commons-collections.version>3.2.1</commons-collections.version>
+        <commons-collections.version>3.2.2</commons-collections.version>
         <commons-logging.version>1.1.1</commons-logging.version>
         <derby.version>10.8.2.2</derby.version>
         <dom4j.version>1.6.1</dom4j.version>
@@ -38,13 +38,19 @@
         <jackcess.version>1.2.4</jackcess.version>
         <javassist.version>3.12.0.GA</javassist.version>
         <jta.version>1.1</jta.version>
-        <log4j.version>1.2.16</log4j.version>
+        <log4j.version>1.2.17</log4j.version>
         <opencsv.version>2.3</opencsv.version>
         <slf4j-api.version>1.6.3</slf4j-api.version>
         <swingx.version>1.6.1</swingx.version>
         <swingx-beaninfo.version>1.6.5-1</swingx-beaninfo.version> <!-- should be 1.6.1, but not exist in maven -->
         <findbugs-annotation.version>3.0.1u2</findbugs-annotation.version>
-        <fb-contrib.version>6.6.0</fb-contrib.version>
+        <fb-contrib.version>6.8.3</fb-contrib.version>
+        
+        <!-- QA -->
+        <spock-core.version>1.1-groovy-2.4-rc-3</spock-core.version>
+        <groovy-all.version>2.4.8</groovy-all.version>
+        <cglib-nodep.version>3.2.4</cglib-nodep.version>
+        <objenesis.version>2.5.1</objenesis.version>
     </properties>
 
     <dependencies>
@@ -139,26 +145,26 @@
         <dependency>
             <groupId>org.spockframework</groupId>
             <artifactId>spock-core</artifactId>
-            <version>1.1-groovy-2.4-rc-3</version>
+            <version>${spock-core.version}</version>
             <scope>test</scope>
         </dependency>
         <!-- Optional dependencies for using Spock -->
         <dependency> <!-- use a specific Groovy version rather than the one specified by spock-core -->
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-all</artifactId>
-            <version>2.4.7</version>
+            <version>${groovy-all.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency> <!-- enables mocking of classes (in addition to interfaces) -->
             <groupId>cglib</groupId>
             <artifactId>cglib-nodep</artifactId>
-            <version>3.2.4</version>
+            <version>${cglib-nodep.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency> <!-- enables mocking of classes without default constructor (together with CGLIB) -->
             <groupId>org.objenesis</groupId>
             <artifactId>objenesis</artifactId>
-            <version>2.5.1</version>
+            <version>${objenesis.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
