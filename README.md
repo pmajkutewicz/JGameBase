@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/pmajkutewicz/JGameBase.svg?branch=master)](https://travis-ci.org/pmajkutewicz/JGameBase)
-[![Dependency Status](https://www.versioneye.com/user/projects/58bc927701b5b70049d7b761/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/58bc927701b5b70049d7b761)
+[![Dependency Status](https://www.versioneye.com/user/projects/58bde76e6d123b00303ce87a/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/58bde76e6d123b00303ce87a)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/913fc1107c97433088daf8559226e754)](https://www.codacy.com/app/pmajkutewicz/JGameBase?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=pmajkutewicz/JGameBase&amp;utm_campaign=Badge_Grade)
 [![codecov](https://codecov.io/gh/pmajkutewicz/JGameBase/branch/master/graph/badge.svg)](https://codecov.io/gh/pmajkutewicz/JGameBase)
 
@@ -15,10 +15,10 @@ Upgrade codebase of JGameBase ([jgamebase.sourceforge.io](https://jgamebase.sour
 ### TODO:
 
 - [x] GitHub (2017-03-04)
-- [x] Minimal maven setup (2017-03-03)
-- [x] Maven minimal release profile (at least main jar with libs for replacing in original release) (2017-03-04) 
+- [x] Minimal gradle setup (2017-03-03)
+- [x] Gradle minimal release profile (at least main jar with libs for replacing in original release) (2017-03-04) 
 - [ ] Bug hunt (reduce nb. of founded by findbugs)
-- [ ] Maven findbugs (and other?) QA plugins
-- [ ] Maven release profile fully compliant with existing release scripts
+- [ ] Gradle findbugs (and other?) QA plugins
+- [ ] Gradle release profile fully compliant with existing release scripts
 - [ ] Tests
 - [ ] Proguard (?) 
