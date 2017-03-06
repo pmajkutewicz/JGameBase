@@ -28,19 +28,19 @@
         
         <findbugs-maven-plugin.failOnError>false</findbugs-maven-plugin.failOnError>
         
-        <antlr.version>2.7.6</antlr.version>
+        <antlr.version>2.7.7</antlr.version>
         <commons-collections.version>3.2.2</commons-collections.version>
         <commons-logging.version>1.1.1</commons-logging.version>
-        <derby.version>10.8.2.2</derby.version>
+        <derby.version>10.13.1.1</derby.version>
         <dom4j.version>1.6.1</dom4j.version>
         <hibernate-core.version>3.6.7.Final</hibernate-core.version> <!-- not sure about version-->
         <hibernate-jpa-2.0-api.version>1.0.1.Final</hibernate-jpa-2.0-api.version>
         <jackcess.version>1.2.4</jackcess.version>
-        <javassist.version>3.12.0.GA</javassist.version>
+        <javassist.version>3.12.1.GA</javassist.version>
         <jta.version>1.1</jta.version>
         <log4j.version>1.2.17</log4j.version>
         <opencsv.version>2.3</opencsv.version>
-        <slf4j-api.version>1.6.3</slf4j-api.version>
+        <slf4j-api.version>1.7.24</slf4j-api.version>
         <swingx.version>1.6.1</swingx.version>
         <swingx-beaninfo.version>1.6.5-1</swingx-beaninfo.version> <!-- should be 1.6.1, but not exist in maven -->
         <findbugs-annotation.version>3.0.1u2</findbugs-annotation.version>
