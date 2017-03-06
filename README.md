@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/pmajkutewicz/JGameBase.svg?branch=master)](https://travis-ci.org/pmajkutewicz/JGameBase)
-[![Dependency Status](https://www.versioneye.com/user/projects/58bc221901b5b7003a212b0c/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/58bc221901b5b7003a212b0c)
+[![Dependency Status](https://www.versioneye.com/user/projects/58bc927701b5b70049d7b761/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/58bc927701b5b70049d7b761)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/913fc1107c97433088daf8559226e754)](https://www.codacy.com/app/pmajkutewicz/JGameBase?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=pmajkutewicz/JGameBase&amp;utm_campaign=Badge_Grade)
 [![codecov](https://codecov.io/gh/pmajkutewicz/JGameBase/branch/master/graph/badge.svg)](https://codecov.io/gh/pmajkutewicz/JGameBase)
 
