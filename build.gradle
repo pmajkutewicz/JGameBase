@@ -3,6 +3,7 @@ apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'jacoco'
 apply plugin: 'findbugs'
+apply from: 'build-release.gradle'
 
 group = 'jgamebase'
 version = '0.64.7-SNAPSHOT'
@@ -95,28 +96,10 @@ jar {
 
 // Custom tasks 
 
-task runJsDoc(dependsOn: jar) {
-    group = "jgb-release"
-    javaexec {
-        main = "-jar";
-        args = [
-                "${rootDir}/src_ressources/jsdoc/jsrun.jar",
-                "${rootDir}/src_ressources/jsdoc/app/run.js",
-                "-a",
-                "-d=${buildDir}/jsdoc",
-                "-t=${rootDir}/src_ressources/jsdoc/templates/jsdoc",
-                "${rootDir}/src/main/resources/bin/Includes/includes.js"
-        ]
-    }
-}
-
 task copyDependencies(type: Copy) {
-    group = "jgb"
     from configurations.compile
     into "$releaseBuildDir/lib"
 }
-
-
 
 // tasks dependencies
 build.dependsOn copyDependencies

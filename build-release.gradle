@@ -1,0 +1,113 @@
+import groovy.io.FileType
+
+import java.text.SimpleDateFormat
+
+class C64Overlay extends DefaultTask {
+    @Input
+    def releaseBuildDir;
+    @Input
+    def overlayTempDir;
+
+    @TaskAction()
+    def create(IncrementalTaskInputs inputs) throws FileNotFoundException {
+        logger.quiet("Executes")
+        if (null != releaseBuildDir) {
+            def ovrname = 'c64'
+            def files = []
+            ("$releaseBuildDir/C64lite/Scripts" as File).eachFile FileType.FILES, {
+                files << it
+            }
+            def result = files.sort { a, b -> b.lastModified() <=> a.lastModified() }.first().lastModified()
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd")
+            def overlayVersion = dateFormat.format(new Date(result))
+            def ovr = "${ovrname}.overlay.${overlayVersion}"
+            ("$releaseBuildDir/C64lite/Settings.cfg" as File).withWriter('UTF-8') { writer ->
+                writer.write("overlay_version=$overlayVersion")
+            }
+            logger.quiet("OVR=${ovr}")
+
+            // create new work directories
+            def c64OverlayTempDir = "${overlayTempDir}/${ovr}"
+            new File(c64OverlayTempDir).mkdirs()
+            cp("$releaseBuildDir/C64lite/Scripts/", "$c64OverlayTempDir/Scripts", "README.TXT")
+            cp("$releaseBuildDir/C64lite/Scripts/", "$c64OverlayTempDir/Scripts", "*.sh")
+            cp("$releaseBuildDir/C64lite/Scripts/", "$c64OverlayTempDir/Scripts", "*.js")
+            cp("$releaseBuildDir/C64lite/Scripts/", "$c64OverlayTempDir/Scripts", "*conf*")
+            cp("$releaseBuildDir/C64lite/Scripts/", "$c64OverlayTempDir/Scripts", "*prop*")
+            cp("$releaseBuildDir/C64lite/Scripts/", "$c64OverlayTempDir/Scripts", "*.cfg")
+            cp("$releaseBuildDir/C64lite/Scripts/", "$c64OverlayTempDir/Scripts", "*.ini")
+            cp("$releaseBuildDir/C64lite/Scripts/", "$c64OverlayTempDir/Scripts", "*rc")
+            cp("$releaseBuildDir/C64lite/Scripts/", "$c64OverlayTempDir/Scripts", "includes")
+            cp("$releaseBuildDir/C64lite/Scripts/", "$c64OverlayTempDir/Scripts", "jsidplay.jar")
+            cp("$releaseBuildDir/C64lite/Scripts/", "$c64OverlayTempDir/Scripts", "jswingc64.jar")
+
+            cp("$releaseBuildDir/C64lite/Gfx/", "$c64OverlayTempDir/Gfx", "*.png")
+
+            cp("$releaseBuildDir/C64lite", "$c64OverlayTempDir", "GameEmulators.ini")
+            cp("$releaseBuildDir/C64lite", "$c64OverlayTempDir", "MusicEmulators.ini")
+            
+            zipIt(overlayTempDir, ovr, "$releaseBuildDir/Overlays")
+
+            new File(c64OverlayTempDir).deleteDir()
+        }
+    }
+
+    def cp(from, to, includePattern) {
+        new groovy.util.AntBuilder().copy(todir: to) {
+            fileset(dir: from) {
+                include(name: includePattern)
+                include(name: includePattern.toUpperCase())
+            }
+        }
+    }
+    
+    def zipIt(overlayTempDir, overlayDirName, outputDir) {
+        new groovy.util.AntBuilder().with {
+            new File(overlayTempDir).eachDir {dir->
+                zip destfile: "${outputDir}/${dir.name}.zip", {
+                    fileset dir: dir
+                }
+            }
+        }
+    }
+    
+    def delDir(dir) {
+        new groovy.util.AntBuilder().delete(dir:dir,failonerror:false)
+    }
+}
+
+def releaseResourcesG = '../JGameBase-bin/release_resources'
+def releaseBuildDirG = "$rootDir/build/output"
+
+task runJsDoc(dependsOn: jar) {
+    javaexec {
+        main = "-jar";
+        args = [
+                "${rootDir}/src_ressources/jsdoc/jsrun.jar",
+                "${rootDir}/src_ressources/jsdoc/app/run.js",
+                "-a",
+                "-d=${buildDir}/jsdoc",
+                "-t=${rootDir}/src_ressources/jsdoc/templates/jsdoc",
+                "${rootDir}/src/main/resources/bin/Includes/includes.js"
+        ]
+    }
+}
+
+task copyBin(type: Copy) {
+    from "$releaseResourcesG/C64lite"
+    into "$releaseBuildDirG/C64lite"
+}
+
+task createC64LiteOverlay(type: C64Overlay) {
+    releaseBuildDir = releaseBuildDirG
+    overlayTempDir = "$rootDir/build/overlayTemp"
+}
+
+task performRelease(dependsOn: copyBin) {
+    group = 'JGameBase release'
+    description = "Perform release of JGameBase"
+}
+
+
+performRelease.finalizedBy createC64LiteOverlay
+
