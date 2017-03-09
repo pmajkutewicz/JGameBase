@@ -85,8 +85,8 @@ public class ItemView implements Cloneable, Comparable<ItemView> {
   // Constructors
   public ItemView() {
     setColumnVisibility(Arrays
-        .asList(new String[] { ColumnHeader.NAME.getName(), ColumnHeader.YEAR.getName(),
-            ColumnHeader.PUBLISHER.getName(), ColumnHeader.GENRE.getName() }));
+        .asList(ColumnHeader.NAME.getName(), ColumnHeader.YEAR.getName(),
+          ColumnHeader.PUBLISHER.getName(), ColumnHeader.GENRE.getName()));
   }
 
   private ItemViewColumn[] getColumnsAsArray() {
