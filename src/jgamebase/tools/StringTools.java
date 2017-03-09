@@ -258,7 +258,7 @@ public abstract class StringTools {
       }
       s.reverse();
       try {
-        final int i = Integer.valueOf(s.toString()) + 1;
+        final int i = Integer.parseInt(s.toString()) + 1;
         return filename.substring(0, pos + 1) + i + "." + FileTools.getExtension(fullFilename);
       } catch (final NumberFormatException e) {
         return "";

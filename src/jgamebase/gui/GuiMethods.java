@@ -986,7 +986,7 @@ public abstract class GuiMethods extends GuiObjects {
     }
 
     try {
-      id = new Integer(idString.substring(1)).intValue();
+      id = Integer.parseInt(idString.substring(1));
     } catch (final Exception e) {
       if (displayWarnings) {
         JOptionPane.showMessageDialog(null, "Invalid item id specified!", "jGameBase",
