@@ -240,8 +240,8 @@ public class SystemTools {
 
     int i = 0;
     // add system environment variables
-    for (final String envName : sysEnv.keySet()) {
-      env[i++] = envName + "=" + sysEnv.get(envName);
+    for (final Map.Entry<String, String> entry: sysEnv.entrySet()) {
+      env[i++] = entry.getKey() + "=" + entry.getValue();
     }
 
     return env;

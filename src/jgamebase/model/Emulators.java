@@ -283,15 +283,15 @@ public class Emulators {
   private static Map<String, String> convertEnvironmentToString(final Map<String, Object> envIn) {
     final Map<String, String> envOut = new HashMap<String, String>();
 
-    for (final String key : envIn.keySet()) {
-      final Object o = (envIn.get(key) != null) ? envIn.get(key) : "";
+    for (final Map.Entry<String, Object> entry : envIn.entrySet()) {
+      final Object o = (entry.getValue() != null) ? entry.getValue() : "";
       if (o.getClass().isArray()) {
         for (int i = 0; i < Array.getLength(o); i++) {
-          envOut.put(key + "_" + i, Array.get(o, i).toString());
+          envOut.put(entry.getKey() + "_" + i, Array.get(o, i).toString());
         }
-        envOut.put(key + "_length", Integer.toString(Array.getLength(o)));
+        envOut.put(entry.getKey() + "_length", Integer.toString(Array.getLength(o)));
       } else {
-        envOut.put(key, o.toString());
+        envOut.put(entry.getKey(), o.toString());
       }
     }
     return envOut;
