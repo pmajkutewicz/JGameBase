@@ -412,15 +412,15 @@ class InArchive extends Header {
 
   int ReadFileNames(final ObjectVector<FileItem> files) throws IOException {
     for (int i = 0; i < files.size(); i++) {
-      String name = new String();
+      StringBuilder name = new StringBuilder();
       for (;;) {
         final char c = ReadWideCharLE();
         if (c == '\0') {
           break;
         }
-        name += c;
+        name.append(c);
       }
-      files.get(i).name = name;
+      files.get(i).name = name.toString();
     }
     return HRESULT.S_OK;
   }

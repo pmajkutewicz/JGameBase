@@ -108,14 +108,14 @@ public class Databases {
           // copy db?
           if (!dir_rw.exists()) {
             log.info("Found database in \"" + dir_ro + "\", copying to \"" + dir_rw + "\",");
-            String s = "  (excluding sub directories ";
+            StringBuilder s = new StringBuilder("  (excluding sub directories ");
             for (int i = 0; i < Const.DB_SUBDIRS.length; i++) {
-              s += "\"" + Const.DB_SUBDIRS[i] + "\"";
+              s.append("\"").append(Const.DB_SUBDIRS[i]).append("\"");
               if (i < (Const.DB_SUBDIRS.length - 1)) {
-                s += ", ";
+                s.append(", ");
               }
             }
-            log.info(s + ").");
+            log.info(s.append(").").toString());
             log.info("");
             try {
               // copy excluding db sub directories
