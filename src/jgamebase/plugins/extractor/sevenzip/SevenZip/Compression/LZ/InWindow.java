@@ -33,9 +33,7 @@ public class InWindow {
     final int numBytes = (_bufferOffset + _streamPos) - offset;
 
     // check negative offset ????
-    for (int i = 0; i < numBytes; i++) {
-      _bufferBase[i] = _bufferBase[offset + i];
-    }
+    System.arraycopy(_bufferBase, offset + 0, _bufferBase, 0, numBytes);
     _bufferOffset -= offset;
   }
 
