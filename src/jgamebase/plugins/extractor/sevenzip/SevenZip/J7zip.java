@@ -1,6 +1,7 @@
 package jgamebase.plugins.extractor.sevenzip.SevenZip;
 
 import java.text.DateFormat;
+import java.util.Arrays;
 import java.util.Vector;
 
 import jgamebase.plugins.extractor.sevenzip.SevenZip.Archive.IArchiveExtractCallback;
@@ -131,9 +132,7 @@ public class J7zip {
     int mode = -1;
 
     final Vector<String> listOfNames = new Vector<String>();
-    for (int i = 2; i < args.length; i++) {
-      listOfNames.add(args[i]);
-    }
+    listOfNames.addAll(Arrays.asList(args).subList(2, args.length));
 
     if (args[0].equals("l")) {
       mode = MODE_LISTING;
