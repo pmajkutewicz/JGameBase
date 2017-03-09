@@ -76,6 +76,63 @@ class C64Overlay extends DefaultTask {
     }
 }
 
+class HomepageAndDocs extends DefaultTask {
+    @Input
+    def releaseBuildDir;
+    @Input
+    def docsTempDir
+    
+    @TaskAction()
+    def create(IncrementalTaskInputs inputs) {
+        new File(docsTempDir).mkdirs()
+        downloadRebel('http://www.rebol.com/downloads/v278/rebol-core-278-4-3.tar.gz', "${docsTempDir}/rebol-core-278-4-3.tar.gz")
+        unpack("${docsTempDir}/rebol-core-278-4-3.tar.gz", docsTempDir)
+        genrateRebol("${docsTempDir}/releases/rebol-core")
+    }
+    
+    def downloadRebel(remoteUrl, localUrl) {
+        new File("$localUrl").withOutputStream { out ->
+            new URL(remoteUrl).withInputStream { from ->  out << from; }
+        }
+    }
+    
+    def unpack(fileLocation, destination) {
+        new groovy.util.AntBuilder().untar(src:fileLocation,
+                compression: 'gzip',
+                dest:destination,
+                overwrite:"false" )
+    }
+    
+    def genrateRebol(workDir) {
+        executeOnShell('ls', workDir)
+    }
+    
+    def executeOnShell(String command, workDir) {
+        return executeOnShell(command, new File(workDir))
+    }
+
+    def executeOnShell(String command, File workingDir) {
+        println command
+        def process = new ProcessBuilder(addShellPrefix(command))
+                .directory(workingDir)
+                .redirectErrorStream(true)
+                .start()
+        process.inputStream.eachLine {println it}
+        process.waitFor();
+        return process.exitValue()
+    }
+
+    def addShellPrefix(String command) {
+        def commandArray = new String[3]
+        commandArray[0] = "sh"
+        commandArray[1] = "-c"
+        commandArray[2] = command
+        return commandArray
+    }
+}
+
+
+
 def releaseResourcesG = '../JGameBase-bin/release_resources'
 def releaseBuildDirG = "$rootDir/build/output"
 
@@ -103,6 +160,11 @@ task createC64LiteOverlay(type: C64Overlay) {
     overlayTempDir = "$rootDir/build/overlayTemp"
 }
 
+task createHomePageAndDocs(type: HomepageAndDocs) {
+    releaseBuildDir = releaseBuildDirG
+    docsTempDir = "$rootDir/build/docsTempDir"
+}
+
 task performRelease(dependsOn: copyBin) {
     group = 'JGameBase release'
     description = "Perform release of JGameBase"
@@ -110,4 +172,5 @@ task performRelease(dependsOn: copyBin) {
 
 
 performRelease.finalizedBy createC64LiteOverlay
+performRelease.finalizedBy createHomePageAndDocs
 
