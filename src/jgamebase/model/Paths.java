@@ -144,9 +144,7 @@ public class Paths {
           }
 
           process.waitFor();
-        } catch (final IOException e) {
-          e.printStackTrace();
-        } catch (final InterruptedException e) {
+        } catch (final IOException | InterruptedException e) {
           e.printStackTrace();
         } finally {
           if (stderr != null) {

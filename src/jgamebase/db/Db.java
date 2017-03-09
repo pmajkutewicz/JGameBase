@@ -345,8 +345,6 @@ public class Db {
     } catch (final NullPointerException npe) {
       // set empty list
       items = new ArrayList<Item>();
-    } catch (final HibernateException he) {
-      he.printStackTrace();
     } catch (final Exception e) {
       e.printStackTrace();
     }
@@ -512,8 +510,6 @@ public class Db {
     } catch (final NullPointerException npe) {
       // set empty list
       items = new ArrayList<Item>();
-    } catch (final HibernateException he) {
-      he.printStackTrace();
     } catch (final Exception e) {
       e.printStackTrace();
     }

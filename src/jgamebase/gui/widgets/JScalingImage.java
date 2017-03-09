@@ -124,8 +124,7 @@ public class JScalingImage extends JLabel implements flushable {
             setToolTipText(filename);
             setIcon(Const.ICON_LOADERROR);
           }
-        } catch (final ExecutionException ignore) {
-        } catch (final InterruptedException ignore) {
+        } catch (final ExecutionException | InterruptedException ignore) {
         } finally {
           setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
         }
