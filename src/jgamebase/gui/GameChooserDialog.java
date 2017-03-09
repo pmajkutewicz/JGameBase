@@ -224,7 +224,7 @@ public class GameChooserDialog extends javax.swing.JDialog {
   private final Object[] fileFilters = {
       new FileFilter("All files", "*"),
       new FileFilter("Only compressed files", Plugins.getSupportedExtractorExtension()),
-      new FileFilter("Only image files", Plugins.getSupportedDiskInfoExtension().toString()),
+      new FileFilter("Only image files", Plugins.getSupportedDiskInfoExtension()),
       new FileFilter("Only game and image files", Emulators.getSupportedGameExtensions().toString()) };
 
   private static final int STATUS_NOTHING = 0;

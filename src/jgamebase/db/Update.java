@@ -264,7 +264,7 @@ public final class Update {
           if (value.equals("+")) {
             // fill with original value or "0" if original value is ""
             // helps with integer values ",,"
-            newRow[j] = (row[j].toString().isEmpty()) ? "0" : row[j].toString();
+            newRow[j] = (row[j].isEmpty()) ? "0" : row[j];
           } else {
             // fill with given value
             newRow[j] = value;
