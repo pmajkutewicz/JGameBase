@@ -18,6 +18,7 @@
 package jgamebase.db;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public enum Table {
@@ -39,13 +40,7 @@ public enum Table {
   }
 
   public static List<Table> getValuesAsList() {
-    final List<Table> tables = new ArrayList<Table>();
-
-    for (final Table table : values()) {
-      tables.add(table);
-    }
-
-    return tables;
+    return Arrays.asList(values());
   }
 
   public static List<Table> getValuesAsList(final double version) {
