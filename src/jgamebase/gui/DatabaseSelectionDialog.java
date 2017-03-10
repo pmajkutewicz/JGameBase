@@ -22,6 +22,7 @@ import java.awt.Component;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import javax.swing.AbstractListModel;
@@ -31,6 +32,7 @@ import javax.swing.ListCellRenderer;
 
 import jgamebase.Const;
 import jgamebase.Const.CloseAction;
+import jgamebase.model.Database;
 import jgamebase.model.DatabaseSelection;
 
 /**
@@ -246,10 +248,7 @@ public class DatabaseSelectionDialog extends javax.swing.JDialog {
   }
 
   public List<DatabaseSelection> getSelected() {
-    final List<DatabaseSelection> selected = new ArrayList<DatabaseSelection>();
-    selected.addAll((Collection<? extends DatabaseSelection>) Arrays.asList(list
-        .getSelectedValues()));
-    return selected;
+    return list.getSelectedValuesList();
   }
 
 }
