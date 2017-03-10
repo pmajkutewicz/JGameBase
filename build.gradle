@@ -45,9 +45,17 @@ dependencies {
 
 sourceSets {
     main {
+        java {
+            srcDirs = ["src"]
+        }
         resources {
-            srcDirs = ["src/main/java"]
+            srcDirs = ["src"]
             includes = ["**/*.xml"]
+        }
+    }
+    test {
+        groovy {
+            srcDirs = ["test/groovy"]
         }
     }
 }

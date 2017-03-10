@@ -1,5 +1,6 @@
 #gradle
 build
+.gradle
 
 #maven
 .target
@@ -13,3 +14,6 @@ build
 *.log
 global.ini
 
+#other
+out
+classes

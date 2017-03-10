@@ -145,7 +145,7 @@ task runJsDoc(dependsOn: jar) {
                 "-a",
                 "-d=${buildDir}/jsdoc",
                 "-t=${rootDir}/src_ressources/jsdoc/templates/jsdoc",
-                "${rootDir}/src/main/resources/bin/Includes/includes.js"
+                "${rootDir}/main/resources/bin/Includes/includes.js"
         ]
     }
 }

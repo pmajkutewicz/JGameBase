@@ -143,10 +143,10 @@ public abstract class StringTools {
   /**
    * Encodes the string using HTML entities. The five standard XML entities are
    * replaced and additionally backslashes and linefeeds are encoded.
-   *
+   * 
    * @param s
    *          The string to encode.
-   *
+   * 
    * @return The encoded string.
    */
   public static String htmlEncode(final String s) {
@@ -273,7 +273,7 @@ public abstract class StringTools {
 
   /*
    * From "MiningMart", released under GPL >=2
-   *
+   * 
    * Copyright (C) 2006 Martin Scholz, Timm Euler, Daniel Hakenjos, Katharina
    * Morik
    */
