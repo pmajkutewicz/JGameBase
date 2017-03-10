@@ -382,22 +382,23 @@ public class Db {
 
     strLinkField = strLinkField.toUpperCase();
 
-    if (strLinkField.equals("PU_ID")) {
-      return "PUBLISHER";
-    } else if (strLinkField.equals("PR_ID")) {
-      return "PROGRAMMER";
-    } else if (strLinkField.equals("MU_ID")) {
-      return "MUSICIAN";
-    } else if (strLinkField.equals("LA_ID")) {
-      return "LANGUAGE";
-    } else if (strLinkField.equals("GE_ID")) {
-      return "GENRE";
-    } else if (strLinkField.equals("PG_ID")) {
-      return "PARENTGENRE";
-    } else if (strLinkField.equals("CR_ID")) {
-      return "CRACKER";
-    } else if (strLinkField.equals("DI_ID")) {
-      return "DIFFICULTY";
+    switch (strLinkField) {
+      case "PU_ID":
+        return "PUBLISHER";
+      case "PR_ID":
+        return "PROGRAMMER";
+      case "MU_ID":
+        return "MUSICIAN";
+      case "LA_ID":
+        return "LANGUAGE";
+      case "GE_ID":
+        return "GENRE";
+      case "PG_ID":
+        return "PARENTGENRE";
+      case "CR_ID":
+        return "CRACKER";
+      case "DI_ID":
+        return "DIFFICULTY";
     }
 
     return "";
@@ -978,36 +979,49 @@ public class Db {
 
       // DATABASE FIELD
       if (operator == ItemViewFilter.OPERATOR_EQUAL) {
-        if (fieldName.equals("PLAYERSFROM")) {
-          // number of players
-          GetFilter = "(" + tableDotField + " = " + clauseData + ") AND (Games.PlayersTo = "
+        switch (fieldName) {
+          case "PLAYERSFROM":
+            // number of players
+            GetFilter = "(" + tableDotField + " = " + clauseData + ") AND (Games.PlayersTo = "
               + clauseData + ")";
-        } else if (fieldName.equals("PLAYERSTO")) {
-          // number of players
-          GetFilter = "(" + tableDotField + " = " + clauseData + ")";
-        } else if (fieldName.equals("PREQUEL") || fieldName.equals("Sequel")
-            || fieldName.equals("Related")) {
-          // prequel, sequel and related game
-          if (clauseData.equals("-1")) {
-            GetFilter = tableDotField + " > 0"; // has
-          } else {
-            GetFilter = tableDotField + " = 0"; // hasn't
-          }
-        } else if (fieldName.equals("FA") || fieldName.equals("SA") || fieldName.equals("FAV")
-            || fieldName.equals("SFAV") || fieldName.equals("EXTRAS")
-            || fieldName.equals("CLASSIC") || fieldName.equals("V_LOADINGSCREEN")
-            || fieldName.equals("V_HIGHSCORESAVER") || fieldName.equals("V_INCLUDEDDOCS")
-            || fieldName.equals("V_TRUEDRIVEEMU") || fieldName.equals("PLAYERSSIM")
-            || fieldName.equals("ADULT")) {
-          // prequel, sequel and related game
-          if (clauseData.equals("-1")) {
-            GetFilter = tableDotField + " <> 0"; // is
-          } else {
-            GetFilter = tableDotField + " = 0"; // isn't
-          }
-        } else {
-          // all else
-          GetFilter = tableDotField + " = " + clauseData;
+            break;
+          case "PLAYERSTO":
+            // number of players
+            GetFilter = "(" + tableDotField + " = " + clauseData + ")";
+            break;
+          case "PREQUEL":
+          case "Sequel":
+          case "Related":
+            // prequel, sequel and related game
+            if (clauseData.equals("-1")) {
+              GetFilter = tableDotField + " > 0"; // has
+            } else {
+              GetFilter = tableDotField + " = 0"; // hasn't
+            }
+            break;
+          case "FA":
+          case "SA":
+          case "FAV":
+          case "SFAV":
+          case "EXTRAS":
+          case "CLASSIC":
+          case "V_LOADINGSCREEN":
+          case "V_HIGHSCORESAVER":
+          case "V_INCLUDEDDOCS":
+          case "V_TRUEDRIVEEMU":
+          case "PLAYERSSIM":
+          case "ADULT":
+            // prequel, sequel and related game
+            if (clauseData.equals("-1")) {
+              GetFilter = tableDotField + " <> 0"; // is
+            } else {
+              GetFilter = tableDotField + " = 0"; // isn't
+            }
+            break;
+          default:
+            // all else
+            GetFilter = tableDotField + " = " + clauseData;
+            break;
         }
       } else if (operator == ItemViewFilter.OPERATOR_NOTEQUAL) {
         if (fieldName.equals("PLAYERSFROM")) {
@@ -1026,29 +1040,41 @@ public class Db {
         // years only
         GetFilter = tableDotField + " < " + clauseData;
       } else if (operator == ItemViewFilter.OPERATOR_LESSTHAN) {
-        if (fieldName.equals("PLAYERSTO") || fieldName.equals("V_Trainers")) {
-          // number of players, trainers
-          GetFilter = "(" + tableDotField + " < " + clauseData + ") AND (" + tableDotField
+        switch (fieldName) {
+          case "PLAYERSTO":
+          case "V_Trainers":
+            // number of players, trainers
+            GetFilter = "(" + tableDotField + " < " + clauseData + ") AND (" + tableDotField
               + " > -1)";
-        } else if (fieldName.equals("V_LENGTH") || fieldName.equals("V_LENGTHTYPE")) {
-          // game length
-          GetFilter = "(" + tableDotField + " < " + clauseData + ")";
-        } else {
-          // rating
-          GetFilter = "(" + tableDotField + " < " + clauseData + ") AND (" + tableDotField
+            break;
+          case "V_LENGTH":
+          case "V_LENGTHTYPE":
+            // game length
+            GetFilter = "(" + tableDotField + " < " + clauseData + ")";
+            break;
+          default:
+            // rating
+            GetFilter = "(" + tableDotField + " < " + clauseData + ") AND (" + tableDotField
               + " > 0)";
+            break;
         }
       } else if (operator == ItemViewFilter.OPERATOR_MORETHAN) {
-        if (fieldName.equals("PLAYERSFROM")) {
-          // number of players
-          GetFilter = "(" + tableDotField + " > " + clauseData + ") OR (PlayersTo > " + clauseData
+        switch (fieldName) {
+          case "PLAYERSFROM":
+            // number of players
+            GetFilter = "(" + tableDotField + " > " + clauseData + ") OR (PlayersTo > " + clauseData
               + ")";
-        } else if (fieldName.equals("V_TRAINERS") || fieldName.equals("RATING")) {
-          // trainers, rating
-          GetFilter = tableDotField + " > " + clauseData;
-        } else if (fieldName.equals("V_LENGTH") || fieldName.equals("V_LENGTHTYPE")) {
-          // game length
-          GetFilter = tableDotField + " > " + clauseData;
+            break;
+          case "V_TRAINERS":
+          case "RATING":
+            // trainers, rating
+            GetFilter = tableDotField + " > " + clauseData;
+            break;
+          case "V_LENGTH":
+          case "V_LENGTHTYPE":
+            // game length
+            GetFilter = tableDotField + " > " + clauseData;
+            break;
         }
       }
 

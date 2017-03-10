@@ -245,97 +245,111 @@ public class ItemViewFilter implements Cloneable {
         final int operator = getOperator();
 
         // YEARS EQUAL OR NOT EQUAL
-        if (field.equals("YE_ID")) {
-          list = Selection.createSelections(Const.FORDISPLAY_YEAR);
-        } else if (field.equals("YEAR") || field.equals("YEARVAL")) {
-          if (operator == ItemViewFilter.OPERATOR_AFTER) {
-            // YEARS IS AFTER
-            for (int i = 10; i < Const.YEAR_NUMBER; i++) {
-              list.add(new Selection(Const.FORDISPLAY_YEAR[i], i));
+        switch (field) {
+          case "YE_ID":
+            list = Selection.createSelections(Const.FORDISPLAY_YEAR);
+            break;
+          case "YEAR":
+          case "YEARVAL":
+            if (operator == ItemViewFilter.OPERATOR_AFTER) {
+              // YEARS IS AFTER
+              for (int i = 10; i < Const.YEAR_NUMBER; i++) {
+                list.add(new Selection(Const.FORDISPLAY_YEAR[i], i));
+              }
+            } else { // YEARS IS BEFORE
+              for (int i = 11; i <= Const.YEAR_NUMBER; i++) {
+                list.add(new Selection(Const.FORDISPLAY_YEAR[i], i));
+              }
             }
-          } else { // YEARS IS BEFORE
-            for (int i = 11; i <= Const.YEAR_NUMBER; i++) {
-              list.add(new Selection(Const.FORDISPLAY_YEAR[i], i));
-            }
-          }
 
-          // GENRE EQUAL OR NOT EQUAL
-        } else if (field.equals("GE_ID")) {
-          list = Db.getGenreSelections();
+            // GENRE EQUAL OR NOT EQUAL
+            break;
+          case "GE_ID":
+            list = Db.getGenreSelections();
 
-        } else if (field.equals("PLAYERSFROM")) {
-          if ((operator == ItemViewFilter.OPERATOR_EQUAL)
+            break;
+          case "PLAYERSFROM":
+            if ((operator == ItemViewFilter.OPERATOR_EQUAL)
               || (operator == ItemViewFilter.OPERATOR_NOTEQUAL)) {
-            // PLAYERS EQUAL OR NOT EQUAL
-            list.add(new Selection("(Unknown)", -1));
-            list.addAll(Selection.createSelections(0, 10));
-          } else if (operator == ItemViewFilter.OPERATOR_MORETHAN) {
-            // PLAYERS MORE THAN
-            list = Selection.createSelections(0, 10);
-          }
-
-        } else if (field.equals("PLAYERSTO")) {
-          // PLAYERS LESS THAN
-          list = Selection.createSelections(1, 10);
-
-        } else if (field.equals("V_TRAINERS")) {
-          if ((operator == ItemViewFilter.OPERATOR_EQUAL)
-              || (operator == ItemViewFilter.OPERATOR_NOTEQUAL)) {
-            // TRAINERS EQUAL OR NOT EQUAL
-            list.add(new Selection("(Unknown)", -1));
-            list.addAll(Selection.createSelections(0, 20));
-          } else if (operator == ItemViewFilter.OPERATOR_MORETHAN) {
-            // TRAINERS MORE THAN
-            list = Selection.createSelections(0, 20);
-          } else if (operator == ItemViewFilter.OPERATOR_LESSTHAN) {
-            // TRAINERS LESS THAN
-            list = Selection.createSelections(1, 21);
-          }
-
-        } else if (field.equals("V_LENGTH")) {
-          list = Selection.createSelections(0, 1000);
-
-        } else if (field.equals("V_LENGTHTYPE")) {
-          list = Selection.createSelections(Const.FORDISPLAY_LENGTHTYPE);
-
-        } else if (field.equals("RATING")) {
-          if ((operator == ItemViewFilter.OPERATOR_EQUAL)
-              || (operator == ItemViewFilter.OPERATOR_NOTEQUAL)) {
-            // RATING EQUAL OR NOT EQUAL
-            for (int i = 0; i <= 5; i++) {
-              list.add(new Selection(Const.FORDISPLAY_RATING[i], i));
+              // PLAYERS EQUAL OR NOT EQUAL
+              list.add(new Selection("(Unknown)", -1));
+              list.addAll(Selection.createSelections(0, 10));
+            } else if (operator == ItemViewFilter.OPERATOR_MORETHAN) {
+              // PLAYERS MORE THAN
+              list = Selection.createSelections(0, 10);
             }
-          } else if (operator == ItemViewFilter.OPERATOR_MORETHAN) {
-            // RATING MORE THAN
-            for (int i = 1; i <= 4; i++) {
-              list.add(new Selection(Const.FORDISPLAY_RATING[i], i));
-            }
-          } else if (operator == ItemViewFilter.OPERATOR_LESSTHAN) {
-            // RATING LESS THAN
-            for (int i = 2; i <= 5; i++) {
-              list.add(new Selection(Const.FORDISPLAY_RATING[i], i));
-            }
-          }
 
-        } else if (field.equals("CONTROL")) {
-          // CONTROL EQUAL OR NOT EQUAL
-          list = Selection.createSelections(Const.FORDISPLAY_CONTROL);
+            break;
+          case "PLAYERSTO":
+            // PLAYERS LESS THAN
+            list = Selection.createSelections(1, 10);
 
-        } else if (field.equals("V_PALNTSC")) {
-          list = Selection.createSelections(Const.FORDISPLAY_PALNTSC);
-
-        } else if (field.equals("VERSION")) {
-          if ((operator == ItemViewFilter.OPERATOR_EQUAL)
+            break;
+          case "V_TRAINERS":
+            if ((operator == ItemViewFilter.OPERATOR_EQUAL)
               || (operator == ItemViewFilter.OPERATOR_NOTEQUAL)) {
-            // VERSION EQUAL OR NOT EQUAL
-            list = Selection.createSelections(0, 999);
-          } else if (operator == ItemViewFilter.OPERATOR_MORETHAN) {
-            // VERSION MORE THAN
-            list = Selection.createSelections(0, 998);
-          } else if (operator == ItemViewFilter.OPERATOR_LESSTHAN) {
-            // VERSION LESS THAN
-            list = Selection.createSelections(1, 999);
-          }
+              // TRAINERS EQUAL OR NOT EQUAL
+              list.add(new Selection("(Unknown)", -1));
+              list.addAll(Selection.createSelections(0, 20));
+            } else if (operator == ItemViewFilter.OPERATOR_MORETHAN) {
+              // TRAINERS MORE THAN
+              list = Selection.createSelections(0, 20);
+            } else if (operator == ItemViewFilter.OPERATOR_LESSTHAN) {
+              // TRAINERS LESS THAN
+              list = Selection.createSelections(1, 21);
+            }
+
+            break;
+          case "V_LENGTH":
+            list = Selection.createSelections(0, 1000);
+
+            break;
+          case "V_LENGTHTYPE":
+            list = Selection.createSelections(Const.FORDISPLAY_LENGTHTYPE);
+
+            break;
+          case "RATING":
+            if ((operator == ItemViewFilter.OPERATOR_EQUAL)
+              || (operator == ItemViewFilter.OPERATOR_NOTEQUAL)) {
+              // RATING EQUAL OR NOT EQUAL
+              for (int i = 0; i <= 5; i++) {
+                list.add(new Selection(Const.FORDISPLAY_RATING[i], i));
+              }
+            } else if (operator == ItemViewFilter.OPERATOR_MORETHAN) {
+              // RATING MORE THAN
+              for (int i = 1; i <= 4; i++) {
+                list.add(new Selection(Const.FORDISPLAY_RATING[i], i));
+              }
+            } else if (operator == ItemViewFilter.OPERATOR_LESSTHAN) {
+              // RATING LESS THAN
+              for (int i = 2; i <= 5; i++) {
+                list.add(new Selection(Const.FORDISPLAY_RATING[i], i));
+              }
+            }
+
+            break;
+          case "CONTROL":
+            // CONTROL EQUAL OR NOT EQUAL
+            list = Selection.createSelections(Const.FORDISPLAY_CONTROL);
+
+            break;
+          case "V_PALNTSC":
+            list = Selection.createSelections(Const.FORDISPLAY_PALNTSC);
+
+            break;
+          case "VERSION":
+            if ((operator == ItemViewFilter.OPERATOR_EQUAL)
+              || (operator == ItemViewFilter.OPERATOR_NOTEQUAL)) {
+              // VERSION EQUAL OR NOT EQUAL
+              list = Selection.createSelections(0, 999);
+            } else if (operator == ItemViewFilter.OPERATOR_MORETHAN) {
+              // VERSION MORE THAN
+              list = Selection.createSelections(0, 998);
+            } else if (operator == ItemViewFilter.OPERATOR_LESSTHAN) {
+              // VERSION LESS THAN
+              list = Selection.createSelections(1, 999);
+            }
+            break;
         }
         break;
     }

@@ -134,15 +134,19 @@ public class J7zip {
     final Vector<String> listOfNames = new Vector<String>();
     listOfNames.addAll(Arrays.asList(args).subList(2, args.length));
 
-    if (args[0].equals("l")) {
-      mode = MODE_LISTING;
-    } else if (args[0].equals("t")) {
-      mode = MODE_TESTING;
-    } else if (args[0].equals("x")) {
-      mode = MODE_EXTRACT;
-    } else {
-      PrintHelp();
-      return;
+    switch (args[0]) {
+      case "l":
+        mode = MODE_LISTING;
+        break;
+      case "t":
+        mode = MODE_TESTING;
+        break;
+      case "x":
+        mode = MODE_EXTRACT;
+        break;
+      default:
+        PrintHelp();
+        return;
     }
 
     final String filename = args[1];

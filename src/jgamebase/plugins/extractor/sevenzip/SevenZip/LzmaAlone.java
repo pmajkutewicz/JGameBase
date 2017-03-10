@@ -46,14 +46,18 @@ public class LzmaAlone {
         Eos = true;
       } else if (s.startsWith("mf")) {
         final String mfs = s.substring(2);
-        if (mfs.equals("bt2")) {
-          MatchFinder = 0;
-        } else if (mfs.equals("bt4")) {
-          MatchFinder = 1;
-        } else if (mfs.equals("bt4b")) {
-          MatchFinder = 2;
-        } else {
-          return false;
+        switch (mfs) {
+          case "bt2":
+            MatchFinder = 0;
+            break;
+          case "bt4":
+            MatchFinder = 1;
+            break;
+          case "bt4b":
+            MatchFinder = 2;
+            break;
+          default:
+            return false;
         }
       } else {
         return false;

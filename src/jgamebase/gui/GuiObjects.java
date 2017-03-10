@@ -3260,27 +3260,35 @@ public abstract class GuiObjects extends javax.swing.JFrame {
     final ItemView view = createQuickview(quickfilterField.getSelectedItem() + " = "
         + quickfilterText.getText(), include);
 
-    if (field.equals("Name")) {
-      view.addFilter(new ItemViewFilter(ItemViewFilter.CLAUSETYPE_CONTAINSTEXT,
+    switch (field) {
+      case "Name":
+        view.addFilter(new ItemViewFilter(ItemViewFilter.CLAUSETYPE_CONTAINSTEXT,
           ItemViewFilter.OPERATOR_EQUAL, "Games", "Name", "", "", text));
-    } else if (field.equals("Publisher")) {
-      view.addFilter(new ItemViewFilter(ItemViewFilter.CLAUSETYPE_CONTAINSTEXT,
+        break;
+      case "Publisher":
+        view.addFilter(new ItemViewFilter(ItemViewFilter.CLAUSETYPE_CONTAINSTEXT,
           ItemViewFilter.OPERATOR_EQUAL, "Publishers", "Publisher", "", "", text));
-    } else if (field.equals("Programmer")) {
-      view.addFilter(new ItemViewFilter(ItemViewFilter.CLAUSETYPE_CONTAINSTEXT,
+        break;
+      case "Programmer":
+        view.addFilter(new ItemViewFilter(ItemViewFilter.CLAUSETYPE_CONTAINSTEXT,
           ItemViewFilter.OPERATOR_EQUAL, "Programmers", "Programmer", "", "", text));
-    } else if (field.equals("Musician")) {
-      view.addFilter(new ItemViewFilter(ItemViewFilter.CLAUSETYPE_CONTAINSTEXT,
+        break;
+      case "Musician":
+        view.addFilter(new ItemViewFilter(ItemViewFilter.CLAUSETYPE_CONTAINSTEXT,
           ItemViewFilter.OPERATOR_EQUAL, "Musicians", "Musician", "Musicians", "Musician", text));
-    } else if (field.equals("Genre")) {
-      view.addFilter(new ItemViewFilter(ItemViewFilter.CLAUSETYPE_CONTAINSTEXT,
+        break;
+      case "Genre":
+        view.addFilter(new ItemViewFilter(ItemViewFilter.CLAUSETYPE_CONTAINSTEXT,
           ItemViewFilter.OPERATOR_EQUAL, "Genres", "Genre", "", "", text));
-    } else if (field.equals("Personal Comment")) {
-      view.addFilter(new ItemViewFilter(ItemViewFilter.CLAUSETYPE_CONTAINSTEXT,
+        break;
+      case "Personal Comment":
+        view.addFilter(new ItemViewFilter(ItemViewFilter.CLAUSETYPE_CONTAINSTEXT,
           ItemViewFilter.OPERATOR_EQUAL, "Games", "Comment", "", "", text));
-    } else if (field.equals("Version Comment")) {
-      view.addFilter(new ItemViewFilter(ItemViewFilter.CLAUSETYPE_CONTAINSTEXT,
+        break;
+      case "Version Comment":
+        view.addFilter(new ItemViewFilter(ItemViewFilter.CLAUSETYPE_CONTAINSTEXT,
           ItemViewFilter.OPERATOR_EQUAL, "Games", "V_Comment", "", "", text));
+        break;
     }
 
     setQuickview(view);
