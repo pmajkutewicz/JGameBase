@@ -21,8 +21,8 @@ import javax.swing.Icon;
 
 public interface DatabaseSelection {
 
-  public abstract String getDisplayName();
+  String getDisplayName();
 
-  public abstract Icon getIcon();
+  Icon getIcon();
 
 }

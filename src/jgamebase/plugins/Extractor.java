@@ -24,7 +24,7 @@ import jgamebase.model.Plugin;
 
 public interface Extractor extends Plugin {
 
-  public List<String> extractToTempDir(final String filename) throws IOException;
+  List<String> extractToTempDir(final String filename) throws IOException;
   
-  public List<String> extractToCleanTempDir(final String filename) throws IOException;
+  List<String> extractToCleanTempDir(final String filename) throws IOException;
 }

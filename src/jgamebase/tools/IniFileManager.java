@@ -953,7 +953,7 @@ public class IniFileManager {
 
   private interface Line {
     @Override
-    public String toString();
+    String toString();
   }
 
   private static final Line BLANK_LINE = new Line() {

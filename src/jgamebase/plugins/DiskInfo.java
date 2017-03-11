@@ -23,18 +23,18 @@ import jgamebase.model.Plugin;
 
 public interface DiskInfo extends Plugin {
 
-  public void load(String filename) throws IOException;
+  void load(String filename) throws IOException;
 
-  public String[] getDirectory();
+  String[] getDirectory();
 
-  public String getFilenameAt(int pos);
+  String getFilenameAt(int pos);
 
-  public String getNativeFilenameAt(int pos);
+  String getNativeFilenameAt(int pos);
 
-  public String getHeader();
+  String getHeader();
 
-  public String getFooter();
+  String getFooter();
 
-  public boolean isBootable();
+  boolean isBootable();
 
 }

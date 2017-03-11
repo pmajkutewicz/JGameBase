@@ -147,7 +147,7 @@ public abstract class Const {
   public static final String OVERLAY_INI_FILENAME = "overlays.ini";
 
   /** close action codes. */
-  public static enum CloseAction {
+  public enum CloseAction {
     CANCEL, OK
   };
 

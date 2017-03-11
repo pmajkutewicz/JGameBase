@@ -19,7 +19,7 @@ package jgamebase.model;
 
 public interface Plugin {
 
-  public abstract String[] getSupportedExtensions();
+  String[] getSupportedExtensions();
 
-  public abstract boolean supportsExtension(String extensionToFind);
+  boolean supportsExtension(String extensionToFind);
 }

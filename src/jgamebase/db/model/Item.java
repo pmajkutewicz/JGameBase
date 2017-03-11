@@ -24,40 +24,40 @@ public interface Item extends Comparable<Item> {
   /**
    * @return Returns the id.
    */
-  public abstract int getId();
+  int getId();
 
   /**
    * @return Returns the id as String.
    */
-  public abstract String getStringId();
+  String getStringId();
 
   /**
    * @return Returns the icon.
    */
-  public abstract Icon getIcon();
+  Icon getIcon();
 
   /**
    * @return Returns the name.
    */
-  public abstract String getName();
+  String getName();
 
-  public abstract void setName(String name);
+  void setName(String name);
 
-  public abstract String getFilename();
+  String getFilename();
 
-  public abstract Musician getMusician();
+  Musician getMusician();
 
-  public abstract boolean getIsFavourite();
+  boolean getIsFavourite();
 
-  public abstract boolean getIsAdult();
+  boolean getIsAdult();
 
-  public abstract void setIsFavourite(boolean isFavourite);
+  void setIsFavourite(boolean isFavourite);
 
-  public abstract void play();
+  void play();
 
   @Override
-  public int compareTo(Item other);
+  int compareTo(Item other);
 
-  public String createId();
+  String createId();
 
 }

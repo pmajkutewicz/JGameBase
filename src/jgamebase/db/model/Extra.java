@@ -45,7 +45,7 @@ public class Extra {
   /**
    * Category
    */
-  public static enum Category {
+  public enum Category {
     GameImage(Const.ICON_CATEGORY_GAMEIMAGE, new String[] { "animations", "animation",
         "screenshot", "screenshot" }, Const.ADDEXTRAS_ANIMATION_DIRNAME), AdditionalImage(
         Const.ICON_CATEGORY_ADDITIONALIMAGE, new String[] {}, Const.ADDEXTRAS_ANIMATION_DIRNAME), AdditionalImage_Advertisement(

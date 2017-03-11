@@ -24,16 +24,16 @@ import jgamebase.model.Plugin;
 
 public interface MusicInfo extends Plugin {
 
-  public void load(File file) throws IOException;
+  void load(File file) throws IOException;
 
-  public String getAuthor();
+  String getAuthor();
 
-  public String getCopyright();
+  String getCopyright();
 
-  public String getDefaultSong();
+  String getDefaultSong();
 
-  public String getName();
+  String getName();
 
-  public String getSongNumber();
+  String getSongNumber();
 
 }
