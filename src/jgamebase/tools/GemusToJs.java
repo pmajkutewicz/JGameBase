@@ -41,7 +41,7 @@ public class GemusToJs {
   }
 
   protected static String gemusToJs(final String stringIn) throws IOException {
-    String stringOut = "";
+    StringBuilder stringOut = new StringBuilder();
     final Scanner scanner = new Scanner(stringIn);
     scanner.useDelimiter(Const.LINE_SEPARATOR_PATTERN);
     while (scanner.hasNext()) {
@@ -142,10 +142,10 @@ public class GemusToJs {
       s = s.replaceAll("LightPen", "LIGHTPEN");
       s = s.replaceAll("KoalaPad", "KOALAPAD");
       s = s.replaceAll("LightGun", "LIGHTGUN");
-      stringOut += s;
+      stringOut.append(s);
     }
 
-    return stringOut;
+    return stringOut.toString();
   }
 
 }

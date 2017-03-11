@@ -48,12 +48,12 @@ public class SortWrapper_LastPlayed extends SortWrapper {
     final String t = s.trim();
     final StringTokenizer st = new StringTokenizer(t, ".");
 
-    String u = "";
+    StringBuilder u = new StringBuilder();
     while (st.hasMoreTokens()) {
-      u = st.nextToken() + u;
+      u.insert(0, st.nextToken());
     }
 
-    return u;
+    return u.toString();
   }
 
   @Override

@@ -91,10 +91,12 @@ public class ADF implements DiskInfo {
     if (rootBlockNumber == DEFAULT_ROOT_BLOCK_NUMBER) {
       final int length = getByteAt((int) (((BYTES_PER_SECTOR * rootBlockNumber) + BYTES_PER_SECTOR) - 80));
 
+      StringBuilder sb = new StringBuilder();
       for (int i = 0; i < length; i++) {
-        header += Character
-            .valueOf((char) (getByteAt((int) ((((BYTES_PER_SECTOR * rootBlockNumber) + BYTES_PER_SECTOR) - 79) + i))));
+        sb.append(Character
+            .valueOf((char) (getByteAt((int) ((((BYTES_PER_SECTOR * rootBlockNumber) + BYTES_PER_SECTOR) - 79) + i)))));
       }
+      header = sb.toString();
     }
   }
 

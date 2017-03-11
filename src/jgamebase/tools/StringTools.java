@@ -64,12 +64,12 @@ public abstract class StringTools {
       return "";
     }
 
-    String t = s.trim();
+    StringBuilder t = new StringBuilder(s.trim());
     while (t.length() < length) {
-      t = "0" + t;
+      t.insert(0, "0");
     }
 
-    return t;
+    return t.toString();
   }
 
   public static String firstCharAsString(final String s) {

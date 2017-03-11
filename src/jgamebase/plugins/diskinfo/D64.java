@@ -224,16 +224,17 @@ public class D64 implements DiskInfo {
     int track = 18;
     int sector = 1;
 
-    header = "0 \"";
+    StringBuilder headerSb = new StringBuilder("0 \"");
     for (int i = 0; i <= 15; i++) {
-      header += Character
-          .valueOf((char) (cbmToAscii[getCbmDiskValue(trackOffset[track] + 144 + i)]));
+      headerSb.append(Character
+          .valueOf((char) (cbmToAscii[getCbmDiskValue(trackOffset[track] + 144 + i)])));
     }
-    header += "\" ";
+    headerSb.append("\" ");
     for (int i = 0; i <= 4; i++) {
-      header += Character
-          .valueOf((char) (cbmToAscii[getCbmDiskValue(trackOffset[track] + 162 + i)]));
+      headerSb.append(Character
+          .valueOf((char) (cbmToAscii[getCbmDiskValue(trackOffset[track] + 162 + i)])));
     }
+    header = headerSb.toString();
 
     int blocksFree = 0;
     for (int i = 1; i <= lastTrack; i++) {

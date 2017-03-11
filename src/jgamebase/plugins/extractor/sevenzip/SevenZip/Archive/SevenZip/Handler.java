@@ -346,11 +346,11 @@ public class Handler implements jgamebase.plugins.extractor.sevenzip.SevenZip.Ar
     final int folderIndex = _database.FileIndexToFolderIndexMap.get(index2);
     if (folderIndex != InArchive.kNumNoIndex) {
       final Folder folderInfo = _database.Folders.get(folderIndex);
-      String methodsString = "";
+      StringBuilder methodsString = new StringBuilder();
       for (int i = folderInfo.Coders.size() - 1; i >= 0; i--) {
         final CoderInfo coderInfo = folderInfo.Coders.get(i);
-        if (methodsString != "") {
-          methodsString += ' ';
+        if (methodsString.toString() != "") {
+          methodsString.append(' ');
         }
 
         // MethodInfo methodInfo;
@@ -359,7 +359,7 @@ public class Handler implements jgamebase.plugins.extractor.sevenzip.SevenZip.Ar
 
         for (int j = 0; j < coderInfo.AltCoders.size(); j++) {
           if (j > 0) {
-            methodsString += "|";
+            methodsString.append("|");
           }
           final AltCoderInfo altCoderInfo = coderInfo.AltCoders.get(j);
 
@@ -390,13 +390,13 @@ public class Handler implements jgamebase.plugins.extractor.sevenzip.SevenZip.Ar
           }
 
           if (methodIsKnown) {
-            methodsString += methodName;
+            methodsString.append(methodName);
 
             if (altCoderInfo.MethodID.equals(MethodID.k_LZMA)) {
               if (altCoderInfo.Properties.GetCapacity() >= 5) {
-                methodsString += ":";
+                methodsString.append(":");
                 final int dicSize = GetUInt32FromMemLE(altCoderInfo.Properties.data(), 1);
-                methodsString += GetStringForSizeValue(dicSize);
+                methodsString.append(GetStringForSizeValue(dicSize));
               }
             }
             /*
@@ -424,7 +424,7 @@ public class Handler implements jgamebase.plugins.extractor.sevenzip.SevenZip.Ar
           }
         }
       }
-      ret = methodsString;
+      ret = methodsString.toString();
     }
 
     return ret;

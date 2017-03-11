@@ -191,12 +191,12 @@ public class T64 implements DiskInfo {
     if (!identifier.equals(IDENTIFIER)) { // no T64 file
       throw new FileNotFoundException(filename);
     }
-
-    header = "\"";
+    
+    StringBuilder headerSb = new StringBuilder("\"");
     for (int i = 0; i < (OFFSET_DIR_START - OFFSET_NAME); i++) {
-      header += Character.valueOf((char) (cbmToAscii[getCbmTapeValue(OFFSET_NAME + i)]));
+      headerSb.append(Character.valueOf((char) (cbmToAscii[getCbmTapeValue(OFFSET_NAME + i)])));
     }
-    header += "\"";
+    header = headerSb.append("\"").toString();
 
     final int entry_count = getCbmTapeValue(OFFSET_DIR_ENTRIES)
         + (256 * getCbmTapeValue(OFFSET_DIR_ENTRIES + 1));
