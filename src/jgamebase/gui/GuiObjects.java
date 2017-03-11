@@ -91,8 +91,8 @@ public abstract class GuiObjects extends javax.swing.JFrame {
       final Item item = (Item) object;
       setText(item.getName());
 
-      if (((item instanceof Game) && (((Game) item).getIsClassic() || ((Game) item)
-          .getIsFavourite())) || ((item instanceof Music) && (((Music) item).getIsFavourite()))) {
+      if (((item instanceof Game) && (((Game) item).getIsClassic() || item
+          .getIsFavourite())) || ((item instanceof Music) && (item.getIsFavourite()))) {
         setFont(getFont().deriveFont(Font.BOLD));
       } else {
         setFont(getFont().deriveFont(Font.PLAIN));

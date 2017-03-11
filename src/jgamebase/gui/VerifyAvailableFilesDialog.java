@@ -475,7 +475,7 @@ public class VerifyAvailableFilesDialog extends javax.swing.JDialog {
     for (final Iterator<?> iter = list.iterator(); iter.hasNext();) {
       final Item item = (Item) iter.next();
       if (((item instanceof Game) && (((Game) item).getMusicFilename().isEmpty()))
-          || ((item instanceof Music) && (((Music) item).getFilename().isEmpty()))) {
+          || ((item instanceof Music) && (item.getFilename().isEmpty()))) {
         iter.remove();
       }
     }
@@ -577,7 +577,7 @@ public class VerifyAvailableFilesDialog extends javax.swing.JDialog {
       }
 
       if (item instanceof Music) {
-        filename = ((Music) item).getFilename();
+        filename = item.getFilename();
       }
 
       out.println("   " + filename + "  (" + item.getName() + ")");

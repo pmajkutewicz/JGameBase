@@ -616,7 +616,7 @@ public class ExtrasChooserDialog extends javax.swing.JDialog {
         && (fileSelectionList.getSelectedValue() instanceof String)) {
       return Paths.pathStartingWithoutSeparator(Paths
           .pathEndingWithSeparator(getPathWithoutBasePath())
-          + (String) fileSelectionList.getSelectedValue());
+          + fileSelectionList.getSelectedValue());
     }
     return "";
   }

@@ -765,7 +765,7 @@ public class GameChooserDialog extends javax.swing.JDialog {
         && (fileSelectionList.getSelectedValue() instanceof String)) {
       return Paths.pathStartingWithoutSeparator(Paths
           .pathEndingWithSeparator(getPathWithoutBasePath())
-          + (String) fileSelectionList.getSelectedValue());
+          + fileSelectionList.getSelectedValue());
     }
     return "";
   }
@@ -901,7 +901,7 @@ public class GameChooserDialog extends javax.swing.JDialog {
     final List<String> namesOfSsupportedFiles = new ArrayList<String>();
 
     final String filename = Paths.pathEndingWithSeparator(path)
-        + (String) fileSelectionList.getSelectedValue();
+        + fileSelectionList.getSelectedValue();
 
     // extract files
     List<String> filenames = new ArrayList<String>();
@@ -946,7 +946,7 @@ public class GameChooserDialog extends javax.swing.JDialog {
       filename = (String) packageContentsSelectionList.getSelectedValue();
     } else if (status == STATUS_IMAGE) {
       filename = Paths.pathEndingWithSeparator(path)
-          + (String) fileSelectionList.getSelectedValue();
+          + fileSelectionList.getSelectedValue();
     } else {
       return;
     }
