@@ -1357,12 +1357,7 @@ public class Game implements Item {
     // remove old additional extras
     final List<Extra> extras = new ArrayList<Extra>(game.getExtras());
     if (extras != null) {
-      for (final Iterator<Extra> iterator = extras.iterator(); iterator.hasNext();) {
-        final Extra extra = iterator.next();
-        if ((extra == null) || (extra.isAdditional())) {
-          iterator.remove();
-        }
-      }
+      extras.removeIf(extra -> (extra == null) || (extra.isAdditional()));
     }
 
     // search
