@@ -265,7 +265,7 @@ public class Music implements Item {
 
           // other tokens are publisher
           while (st.hasMoreTokens()) {
-            publisher.append(" " + st.nextToken());
+            publisher.append(" ").append(st.nextToken());
           }
 
           publisherForDisplay = publisher.toString().trim();

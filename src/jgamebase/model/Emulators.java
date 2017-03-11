@@ -214,7 +214,7 @@ public class Emulators {
     try {
       final StringBuffer commandline = new StringBuffer();
       for (final String part : command) {
-        commandline.append("<" + part + "> ");
+        commandline.append("<").append(part).append("> ");
       }
       log.info("Executing game: '" + commandline.toString().trim() + "'");
 

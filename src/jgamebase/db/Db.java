@@ -843,7 +843,7 @@ public class Db {
     if (view.getFilterCount() == 0) {
       // add the adult filter restriction if needed
       if (Preferences.is(Preferences.ADULT_FILTER)) {
-        whereClause.append((isGameTable ? "GAMES" : "MUSIC") + ".ADULT = " + FALSE + " )");
+        whereClause.append(isGameTable ? "GAMES" : "MUSIC").append(".ADULT = ").append(FALSE).append(" )");
         return whereClause.toString();
       }
       // no filters at all
@@ -881,7 +881,8 @@ public class Db {
 
     // add the adult filter restriction if needed
     if (Preferences.is(Preferences.ADULT_FILTER)) {
-      whereClause.append(" AND (" + (isGameTable ? "GAMES" : "MUSIC") + ".ADULT = " + FALSE + ")");
+      whereClause.append(" AND (").append(isGameTable ? "GAMES" : "MUSIC").append(".ADULT = ").append(FALSE)
+        .append(")");
     }
 
     // finish the WHERE Clause with a closing bracket
