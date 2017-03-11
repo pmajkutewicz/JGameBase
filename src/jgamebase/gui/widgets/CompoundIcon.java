@@ -28,7 +28,7 @@ import javax.swing.Icon;
  */
 public class CompoundIcon implements Icon {
   public enum Axis {
-    X_AXIS, Y_AXIS, Z_AXIS;
+    X_AXIS, Y_AXIS, Z_AXIS
   }
 
   public final static float TOP = 0.0f;

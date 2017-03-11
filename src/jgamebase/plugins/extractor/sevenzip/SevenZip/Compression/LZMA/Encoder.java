@@ -230,7 +230,7 @@ public class Encoder {
             + _highCoder.GetPrice(i - Base.kNumLowLenSymbols - Base.kNumMidLenSymbols);
       }
     }
-  };
+  }
 
   public static final int kNumLenSpecSymbols = Base.kNumLowLenSymbols + Base.kNumMidLenSymbols;
 
@@ -296,14 +296,13 @@ public class Encoder {
 
     public void MakeAsShortRep() {
       BackPrev = 0;
-      ;
       Prev1IsChar = false;
     }
 
     public boolean IsShortRep() {
       return (BackPrev == 0);
     }
-  };
+  }
 
   Optimal[] _optimum = new Optimal[kNumOpts];
   jgamebase.plugins.extractor.sevenzip.SevenZip.Compression.LZ.BinTree _matchFinder = null;
@@ -931,7 +930,6 @@ public class Encoder {
       if (newLen > numAvailableBytes) {
         newLen = numAvailableBytes;
         for (numDistancePairs = 0; newLen > _matchDistances[numDistancePairs]; numDistancePairs += 2) {
-          ;
         }
         _matchDistances[numDistancePairs] = newLen;
         numDistancePairs += 2;
@@ -1326,7 +1324,6 @@ public class Encoder {
     _dictionarySize = dictionarySize;
     int dicLogSize;
     for (dicLogSize = 0; dictionarySize > (1 << dicLogSize); dicLogSize++) {
-      ;
     }
     _distTableSize = dicLogSize * 2;
     return true;

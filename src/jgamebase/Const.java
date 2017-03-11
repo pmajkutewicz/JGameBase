@@ -149,7 +149,7 @@ public abstract class Const {
   /** close action codes. */
   public enum CloseAction {
     CANCEL, OK
-  };
+  }
 
   public static final String VIEWNAME_ALL_GAMES = "<All Games>";
   public static final String VIEWNAME_AVAILABLE_GAMES = "<Available Games>";

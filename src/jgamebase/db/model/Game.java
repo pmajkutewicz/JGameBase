@@ -327,7 +327,6 @@ public class Game implements Item {
             : "_" + number)))) {
       number++;
     }
-    ;
 
     return number;
   }

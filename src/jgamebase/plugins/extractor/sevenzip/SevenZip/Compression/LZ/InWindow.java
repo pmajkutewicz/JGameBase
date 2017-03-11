@@ -124,7 +124,6 @@ public class InWindow {
 
     int i;
     for (i = 0; (i < limit) && (_bufferBase[pby + i] == _bufferBase[(pby + i) - distance]); i++) {
-      ;
     }
     return i;
   }

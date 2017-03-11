@@ -67,7 +67,6 @@ public class ArchiveExtractCallback implements IArchiveExtractCallback // ,
       case IInArchive.NExtract_NAskMode_kExtract:
         _extractMode = true;
     }
-    ;
     switch (askExtractMode) {
       case IInArchive.NExtract_NAskMode_kExtract:
         PrintString("Extracting  ");
@@ -79,7 +78,6 @@ public class ArchiveExtractCallback implements IArchiveExtractCallback // ,
         PrintString("Skipping    ");
         break;
     }
-    ;
     PrintString(_filePath);
     return HRESULT.S_OK;
   }
