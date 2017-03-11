@@ -152,7 +152,7 @@ public class FileTools {
       return "";
     }
 
-    if (filename.indexOf(Const.EXTENSION_SEPARATOR) == -1) {
+    if (!filename.contains(Const.EXTENSION_SEPARATOR)) {
       return filename;
     }
 

@@ -3036,7 +3036,7 @@ public abstract class GuiMethods extends GuiObjects {
     for (i = startRow + 1; i < data.getRowCount(); i++) {
       final String col1 = ((Item) data.getValueAt(i, 0)).getName().toLowerCase();
       final String col2 = ((String) data.getValueAt(i, 1)).toLowerCase();
-      if ((col1.indexOf(find) != -1) || (col2.indexOf(find) != -1)) {
+      if ((col1.contains(find)) || (col2.contains(find))) {
         found = true;
         break;
       }

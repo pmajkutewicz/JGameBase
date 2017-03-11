@@ -456,40 +456,40 @@ public class Db {
 
     final String whereClause = getWhereClause(view, true).toUpperCase();
 
-    if (whereClause.indexOf("YEARS") != -1) {
+    if (whereClause.contains("YEARS")) {
       query += "JOIN YEARS ON (GAMES.YE_ID = YEARS.YE_ID) ";
     }
 
-    if (whereClause.indexOf("PUBLISHERS") != -1) {
+    if (whereClause.contains("PUBLISHERS")) {
       query += "JOIN PUBLISHERS ON (GAMES.PU_ID = PUBLISHERS.PU_ID) ";
     }
 
-    if (whereClause.indexOf("GENRES") != -1) {
+    if (whereClause.contains("GENRES")) {
       query += "JOIN GENRES ON (GAMES.GE_ID = GENRES.GE_ID) ";
       query += "JOIN PGENRES ON (GENRES.PG_ID = PGENRES.PG_ID) ";
     }
 
-    if (whereClause.indexOf("MUSICIANS") != -1) {
+    if (whereClause.contains("MUSICIANS")) {
       query += "JOIN MUSICIANS ON (GAMES.MU_ID = MUSICIANS.MU_ID) ";
     }
 
-    if (whereClause.indexOf("DIFFICULTY") != -1) {
+    if (whereClause.contains("DIFFICULTY")) {
       query += "JOIN DIFFICULTY ON (GAMES.DI_ID = DIFFICULTY.DI_ID) ";
     }
 
-    if (whereClause.indexOf("LANGUAGES") != -1) {
+    if (whereClause.contains("LANGUAGES")) {
       query += "JOIN LANGUAGES ON (GAMES.LA_ID = LANGUAGES.LA_ID) ";
     }
 
-    if (whereClause.indexOf("PROGRAMMERS") != -1) {
+    if (whereClause.contains("PROGRAMMERS")) {
       query += "JOIN PROGRAMMERS ON (GAMES.PR_ID = PROGRAMMERS.PR_ID) ";
     }
 
-    if (whereClause.indexOf("EXTRAS") != -1) {
+    if (whereClause.contains("EXTRAS")) {
       query += "JOIN EXTRAS ON (GAMES.GA_ID = EXTRAS.GA_ID) ";
     }
 
-    if (whereClause.indexOf("CRACKERS") != -1) {
+    if (whereClause.contains("CRACKERS")) {
       query += "JOIN CRACKERS ON (GAMES.CR_ID = CRACKERS.CR_ID) ";
     }
 
@@ -526,7 +526,7 @@ public class Db {
       return null;
     }
 
-    if (whereClause.indexOf("MUSICIANS") != -1) {
+    if (whereClause.contains("MUSICIANS")) {
       query += "JOIN MUSICIANS ON (MUSIC.MU_ID = MUSICIANS.MU_ID) ";
     }
 

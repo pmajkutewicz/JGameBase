@@ -110,7 +110,7 @@ public class Extra {
 
     public boolean contains(final String potentialMatch) {
       for (final String matche : matches) {
-        if (potentialMatch.toLowerCase().indexOf(matche.toLowerCase()) != -1) {
+        if (potentialMatch.toLowerCase().contains(matche.toLowerCase())) {
           return true;
         }
       }

@@ -124,7 +124,7 @@ public class ScreenshotChooserDialog extends javax.swing.JDialog {
         final int indentation = selection.getIndentation();
 
         pathName = pathName.substring(0, pathName.length() - 1);
-        if (pathName.indexOf(File.separator) != -1) {
+        if (pathName.contains(File.separator)) {
           pathName = pathName.substring(pathName.lastIndexOf(File.separator), pathName.length());
         }
 
@@ -169,13 +169,13 @@ public class ScreenshotChooserDialog extends javax.swing.JDialog {
         final String extension = FileTools.getExtension(filename);
         final String filenameWithoutExtension = FileTools.removeExtension(filename);
 
-        if (graphicExtensions.indexOf(extension.toLowerCase()) != -1) {
+        if (graphicExtensions.contains(extension.toLowerCase())) {
           setIcon(ICON_GS_GRAPHIC);
         }
 
         setFont(getFont().deriveFont(Font.BOLD));
 
-        if ((filename.indexOf("_") != -1)
+        if ((filename.contains("_"))
             && (filename.lastIndexOf("_") == (filenameWithoutExtension.length() - 2))) {
 
           final char c = filenameWithoutExtension.charAt(filenameWithoutExtension.length() - 1);
@@ -186,7 +186,7 @@ public class ScreenshotChooserDialog extends javax.swing.JDialog {
         }
 
         filename = Paths.pathEndingWithoutSeparator(filename);
-        if (filename.indexOf(File.separator) != -1) {
+        if (filename.contains(File.separator)) {
           filename = filename.substring(filename.lastIndexOf(File.separator), filename.length());
         }
 

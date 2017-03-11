@@ -120,7 +120,7 @@ public class MusicChooserDialog extends javax.swing.JDialog {
         final int indentation = selection.getIndentation();
 
         pathName = pathName.substring(0, pathName.length() - 1);
-        if (pathName.indexOf(File.separator) != -1) {
+        if (pathName.contains(File.separator)) {
           pathName = pathName.substring(pathName.lastIndexOf(File.separator), pathName.length());
         }
 
@@ -180,7 +180,7 @@ public class MusicChooserDialog extends javax.swing.JDialog {
         }
 
         filename = Paths.pathEndingWithoutSeparator(filename);
-        if (filename.indexOf(File.separator) != -1) {
+        if (filename.contains(File.separator)) {
           filename = filename.substring(filename.lastIndexOf(File.separator), filename.length());
         }
 
