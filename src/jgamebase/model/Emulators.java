@@ -212,7 +212,7 @@ public class Emulators {
     stopMusicRunning();
 
     try {
-      final StringBuffer commandline = new StringBuffer();
+      final StringBuilder commandline = new StringBuilder();
       for (final String part : command) {
         commandline.append("<").append(part).append("> ");
       }

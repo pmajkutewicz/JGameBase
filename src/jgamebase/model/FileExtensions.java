@@ -229,7 +229,7 @@ public class FileExtensions extends TreeSet<String> {
 
   @Override
   public String toString() {
-    final StringBuffer extensionsString = new StringBuffer();
+    final StringBuilder extensionsString = new StringBuilder();
 
     for (final Iterator<String> iter = super.iterator(); iter.hasNext();) {
       extensionsString.append(iter.next());

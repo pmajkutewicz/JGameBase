@@ -102,7 +102,7 @@ public class CRT implements DiskInfo {
   }
 
   private String bufferToString(final int start, final int end) {
-    final StringBuffer s = new StringBuffer();
+    final StringBuilder s = new StringBuilder();
     for (int i = start; i < end; i++) {
       s.append((char) buffer[i]);
     }

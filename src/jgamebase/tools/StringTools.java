@@ -123,7 +123,7 @@ public abstract class StringTools {
     final char[] chars = s.toCharArray();
 
     // convert all characters following an underscore to upper case
-    final StringBuffer t = new StringBuffer(Character.toUpperCase(chars[0]));
+    final StringBuilder t = new StringBuilder(Character.toUpperCase(chars[0]));
     for (int i = 1; i < chars.length; i++) {
       if (Character.isWhitespace(chars[i - 1]) || (chars[i - 1] == '.') || (chars[i - 1] == '!')
           || (chars[i - 1] == '?') || (chars[i - 1] == '_')) {
@@ -154,7 +154,7 @@ public abstract class StringTools {
       return "";
     }
 
-    final StringBuffer t = new StringBuffer();
+    final StringBuilder t = new StringBuilder();
 
     for (int i = 0; i < s.length(); i++) {
       final char c = s.charAt(i);

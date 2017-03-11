@@ -451,7 +451,7 @@ public class FileTools {
 
   // read the File as String
   public static String readFileAsString(final String filePath) throws IOException {
-    final StringBuffer fileData = new StringBuffer();
+    final StringBuilder fileData = new StringBuilder();
     final BufferedReader reader = new BufferedReader(new FileReader(filePath));
     final char[] buf = new char[BUFFER_SIZE];
     int numRead = 0;

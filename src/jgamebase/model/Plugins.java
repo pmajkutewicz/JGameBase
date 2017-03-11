@@ -130,7 +130,7 @@ public class Plugins {
   }
 
   public static String getSupportedDiskInfoExtension() {
-    final StringBuffer supportedExtensions = new StringBuffer();
+    final StringBuilder supportedExtensions = new StringBuilder();
 
     for (final Enumeration<String> enumeration = diskInfo.keys(); enumeration.hasMoreElements();) {
       final String extension = enumeration.nextElement();
@@ -154,7 +154,7 @@ public class Plugins {
   }
 
   public static String getSupportedMusicInfoExtension() {
-    final StringBuffer supportedExtensions = new StringBuffer();
+    final StringBuilder supportedExtensions = new StringBuilder();
     for (final Enumeration<String> enumeration = musicInfo.keys(); enumeration.hasMoreElements();) {
       final String extension = enumeration.nextElement();
       supportedExtensions.append(extension);
@@ -177,7 +177,7 @@ public class Plugins {
   }
 
   public static String getSupportedExtractorExtension() {
-    final StringBuffer supportedExtensions = new StringBuffer();
+    final StringBuilder supportedExtensions = new StringBuilder();
     for (final Enumeration<String> enumeration = extractor.keys(); enumeration.hasMoreElements();) {
       final String extension = enumeration.nextElement();
       supportedExtensions.append(extension);

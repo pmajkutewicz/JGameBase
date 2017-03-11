@@ -999,7 +999,7 @@ public class IniFileManager {
         this.value = "";
       } else {
         final StringTokenizer st = new StringTokenizer(value.trim(), ILLEGAL_VALUE_CHARS);
-        final StringBuffer sb = new StringBuffer();
+        final StringBuilder sb = new StringBuilder();
         while (st.hasMoreTokens()) {
           sb.append(st.nextToken());
         }

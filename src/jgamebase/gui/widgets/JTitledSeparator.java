@@ -28,7 +28,7 @@ public class JTitledSeparator extends JLabel {
 
   public JTitledSeparator(final String title) {
     super();
-    final StringBuffer s = new StringBuffer(lineCharacter + lineCharacter + lineCharacter + " "
+    final StringBuilder s = new StringBuilder(lineCharacter + lineCharacter + lineCharacter + " "
         + title + " ");
 
     for (int i = 0; i < 1000; i++) {

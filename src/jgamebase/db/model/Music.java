@@ -244,7 +244,7 @@ public class Music implements Item {
               .trim();
 
           String year = "";
-          final StringBuffer publisher = new StringBuffer();
+          final StringBuilder publisher = new StringBuilder();
 
           // cut the copyright at whitespace
           final StringTokenizer st = new StringTokenizer(copyright);

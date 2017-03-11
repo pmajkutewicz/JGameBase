@@ -837,7 +837,7 @@ public class Db {
     String andOr;
 
     // start the where clause with an opening bracket
-    final StringBuffer whereClause = new StringBuffer("WHERE (");
+    final StringBuilder whereClause = new StringBuilder("WHERE (");
 
     // no filters specified (always check adult filter)
     if (view.getFilterCount() == 0) {
